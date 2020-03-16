@@ -12,7 +12,7 @@ Module with options to work Pivot tables in excel.
  
 </ul>  
 
-**In the example robot you must change the URL for yours.
+**In the example robot you must change the values for yours.
 
 ![alt text](https://github.com/rocketbot-cl/PivotTableExcel/blob/master/example/pivot.png)
 
