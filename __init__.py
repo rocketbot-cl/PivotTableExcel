@@ -69,14 +69,16 @@ if module == "createPivotTable":
         else:
             cell = destination[0]
 
+
+
         # range_ = [C1, D2]
-        cell_1 = abc.index(range_[0][0].lower()) + 1, int(range_[0][1])
-        cell_2 = abc.index(range_[1][0].lower()) + 1, int(range_[1][1])
+        cell_1 = wb.sheets[data[0]].range(data[1].split(":")[0]).row, wb.sheets[data[0]].range(data[1].split(":")[0]).column
+        cell_2 = wb.sheets[data[0]].range(data[1].split(":")[1]).row, wb.sheets[data[0]].range(data[1].split(":")[1]).column
         cell_3 = abc.index(cell[0].lower()) + 1, int(cell[1])
 
         print(cell_1, cell_2)
-        cell_1 = sheet_1.Cells(cell_1[1], cell_1[0])
-        cell_2 = sheet_1.Cells(cell_2[1], cell_2[0])
+        cell_1 = sheet_1.Cells(cell_1[0], cell_1[1])
+        cell_2 = sheet_1.Cells(cell_2[0], cell_2[1])
 
 
         source_range = sheet_1.Range(cell_1, cell_2)
@@ -88,8 +90,8 @@ if module == "createPivotTable":
             cell_3 = sheet_1.Cells(cell_3[1],cell_3[0])
             pivotTargetRange = sheet_1.Range(cell_3, cell_3)
 
-        pivot_table = wb.api.PivotCaches().Create(SourceType=1, SourceData=source_range, Version=4)
-        pivot_table.CreatePivotTable(TableDestination=pivotTargetRange, TableName=table_name, DefaultVersion=4)
+        pivot_table = wb.api.PivotCaches().Create(SourceType=1, SourceData=source_range)
+        pivot_table.CreatePivotTable(TableDestination=pivotTargetRange, TableName=table_name)
 
     except Exception as e:
         PrintException()
