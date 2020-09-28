@@ -9,12 +9,18 @@ Module with options to work Pivot tables in excel.
   <li>Add Field</li>
   <li>Filter</li>
   <li>List Field</li>
+  <li>Change pivot table data</li>
  
 </ul>  
 
 **In the example robot you must change the values for yours.
 
 ![alt text](https://github.com/rocketbot-cl/PivotTableExcel/blob/master/example/pivot.png)
+
+## Updates
+
+### 28-Sep-2020
+- Change pivot table data: Change range data of Pivot Table
 
 <h2>Dependencies</h2>
 

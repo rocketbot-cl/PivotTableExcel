@@ -190,3 +190,29 @@ if module == "listFields":
         PrintException()
         raise e
 
+if module == "changeOrigin":
+    sheet = GetParams("sheet")
+    pivotTableName = GetParams("table")
+    range_ = GetParams("range")
+    excel = GetGlobals("excel")
+
+    try:
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+        sh = wb.sheets[sheet]
+        sh.select()
+
+        if "!" in range_:
+            sheet, range_ = range_.split("!")
+            source_range = wb.sheets[sheet].api.Range(range_)
+        else:
+            source_range = sh.api.Range(range_)
+        pivot = wb.api.ActiveSheet.PivotTables(pivotTableName)
+        pivot_table = wb.api.PivotCaches().Create(SourceType=1, SourceData=source_range, Version=6)
+        pivot.ChangePivotCache(pivot_table)
+
+    except Exception as e:
+        print("\x1B[" + "31;40mAn error occurred\u2193\x1B[" + "0m")
+        PrintException()
+        raise e
+
