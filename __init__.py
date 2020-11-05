@@ -139,28 +139,37 @@ if module == "addField":
         raise e
 
 
-
 if module == "filter":
 
     sheet = GetParams("sheet")
     pivotTableName = GetParams("table")
     data = GetParams("filter")
-    value = GetParams("value")
+    check = GetParams("check")
+    no_check = GetParams("noCheck")
 
     excel = GetGlobals("excel")
     xls = excel.file_[excel.actual_id]
     try:
+
         wb = xls['workbook']
         sht = wb.sheets[sheet].select()
 
         pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
         filter_ = pivotTable.PivotFields(data)
-        filter_.CurrentPage = "(All)"
+        # filter_.CurrentPage = "(All)"
 
-        print(value.split(","))
         for f in filter_.PivotItems():
-            print(f.Name in value.split(","), f.Name)
-            f.Visible = f.Name in value.split(",")
+
+            # f.Visible = True
+            if check and check != "" and check is not None:
+                if f.Name in check.split(","):
+                    print("check")
+                    f.Visible = True
+
+            if no_check and no_check != "" and no_check is not None and f.Name != "#N/A":
+                if f.Name in no_check.split(","):
+                    print("no check")
+                    f.Visible = False
 
 
     except Exception as e:

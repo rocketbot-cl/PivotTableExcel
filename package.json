@@ -2,7 +2,7 @@
   "author": "Danilo Toro ",
   "description": "Módulo con opciones para trabajar tablas dinámicas en excel",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "1.0",
+  "version": "1.1",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
   "linux": false,
@@ -304,7 +304,7 @@
               "en": "Filter name: "
             },
             "id": "filter",
-            "css": "col-md-6"
+            "css": "col-md-12"
           },
           {
             "type": "input",
@@ -313,15 +313,32 @@
               "en": "Name: "
             },
             "title": {
-              "es": "Valor(es) del filtro: ",
-              "en": "Filter(s) name: "
+              "es": "Valor(es) del filtro a marcar: ",
+              "en": "Filter(s) name to check: "
             },
             "help": {
               "es": "Valores separados por coma",
               "en": "Comma separated value"
             },
-            "id": "value",
-            "css": "col-md-6"
+            "id": "check",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Name: ",
+              "en": "Name: "
+            },
+            "title": {
+              "es": "Valor(es) del filtro a desmarcar: ",
+              "en": "Filter(s) name to uncheck: "
+            },
+            "help": {
+              "es": "Valores separados por coma",
+              "en": "Comma separated value"
+            },
+            "id": "noCheck",
+            "css": "col-md-12"
           }
         ]
       },
