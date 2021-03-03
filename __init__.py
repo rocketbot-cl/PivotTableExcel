@@ -164,26 +164,21 @@ if module == "filter":
             no_check = eval(no_check) if no_check.startswith("[") else no_check.split(",")
 
         for f in filter_.PivotItems():
-            print(f.Name)
+
             if check and check != "" and check is not None:
-                print(filter_.PivotItems(f.Name).Value)
 
                 if f.Name in check:
-                    print("check")
                     f.Visible = True
 
                 if f.Name not in check:
-                    print("no check")
                     f.Visible = False
 
             if no_check and no_check != "" and no_check is not None and f.Name != "#N/A":
 
                 if f.Name in no_check:
-                    print("no check")
                     f.Visible = False
 
                 if f.Name not in no_check:
-                    print("no check")
                     f.Visible = False
 
     except Exception as e:
