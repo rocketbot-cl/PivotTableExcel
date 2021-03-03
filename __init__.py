@@ -50,6 +50,7 @@ if module == "createPivotTable":
     try:
         xls = excel.file_[excel.actual_id]
         wb = xls['workbook']
+        # wb = xw.Book("ruta")
 
         data = data.split("!")
         destination = destination.split("!")
@@ -79,7 +80,6 @@ if module == "createPivotTable":
         print(cell_1, cell_2)
         cell_1 = sheet_1.Cells(cell_1[0], cell_1[1])
         cell_2 = sheet_1.Cells(cell_2[0], cell_2[1])
-
 
         source_range = sheet_1.Range(cell_1, cell_2)
 
@@ -120,6 +120,7 @@ if module == "addField":
 
     try:
         wb = xls['workbook']
+        # wb = xw.Book("ruta")
         sht = wb.sheets[sheet].select()
 
         pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName)
@@ -144,7 +145,7 @@ if module == "filter":
     sheet = GetParams("sheet")
     pivotTableName = GetParams("table")
     data = GetParams("filter")
-    check = GetParams("check")
+    check = GetParams("value")
     no_check = GetParams("noCheck")
 
     excel = GetGlobals("excel")
@@ -156,21 +157,34 @@ if module == "filter":
 
         pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
         filter_ = pivotTable.PivotFields(data)
-        # filter_.CurrentPage = "(All)"
+
+        if check:
+            check = eval(check) if check.startswith("[") else check.split(",")
+        if no_check:
+            no_check = eval(no_check) if no_check.startswith("[") else no_check.split(",")
 
         for f in filter_.PivotItems():
-
-            # f.Visible = True
+            print(f.Name)
             if check and check != "" and check is not None:
-                if f.Name in check.split(","):
+                print(filter_.PivotItems(f.Name).Value)
+
+                if f.Name in check:
                     print("check")
                     f.Visible = True
 
-            if no_check and no_check != "" and no_check is not None and f.Name != "#N/A":
-                if f.Name in no_check.split(","):
+                if f.Name not in check:
                     print("no check")
                     f.Visible = False
 
+            if no_check and no_check != "" and no_check is not None and f.Name != "#N/A":
+
+                if f.Name in no_check:
+                    print("no check")
+                    f.Visible = False
+
+                if f.Name not in no_check:
+                    print("no check")
+                    f.Visible = False
 
     except Exception as e:
         PrintException()
@@ -221,7 +235,33 @@ if module == "changeOrigin":
         pivot.ChangePivotCache(pivot_table)
 
     except Exception as e:
-        print("\x1B[" + "31;40mAn error occurred\u2193\x1B[" + "0m")
+        print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
         PrintException()
         raise e
 
+if module == "getItems":
+
+    sheet = GetParams("sheet")
+    pivotTableName = GetParams("table")
+    data = GetParams("filter")
+    result = GetParams("result")
+
+    excel = GetGlobals("excel")
+    xls = excel.file_[excel.actual_id]
+    try:
+
+        wb = xls['workbook']
+        sht = wb.sheets[sheet].select()
+
+        pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
+        filter_ = pivotTable.PivotFields(data)
+        # filter_.CurrentPage = "(All)"
+
+        items = [item.Name for item in filter_.PivotItems()]
+        if result:
+            SetVar(result, items)
+
+    except Exception as e:
+        print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
+        PrintException()
+        raise e
