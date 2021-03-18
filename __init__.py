@@ -39,13 +39,13 @@ constants = {"xlRowField": 1, "xlColumnField": 2, "xlPageField": 3}
 abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
            'w', 'x', 'y', 'z']
 
+excel = GetGlobals("excel")
 module = GetParams("module")
 
 if module == "createPivotTable":
     data = GetParams("data")
     destination = GetParams("destination")
     table_name = GetParams("tableName")
-    excel = GetGlobals("excel")
 
     try:
         xls = excel.file_[excel.actual_id]
@@ -70,9 +70,6 @@ if module == "createPivotTable":
         else:
             cell = destination[0]
 
-
-
-        # range_ = [C1, D2]
         cell_1 = wb.sheets[data[0]].range(data[1].split(":")[0]).row, wb.sheets[data[0]].range(data[1].split(":")[0]).column
         cell_2 = wb.sheets[data[0]].range(data[1].split(":")[1]).row, wb.sheets[data[0]].range(data[1].split(":")[1]).column
         cell_3 = abc.index(cell[0].lower()) + 1, int(cell[1])
@@ -100,7 +97,6 @@ if module == "createPivotTable":
 if module == "refreshPivot":
     sheet = GetParams("sheet")
     pivotTableName = GetParams("table")
-    excel = GetGlobals("excel")
 
     xls = excel.file_[excel.actual_id]
     wb = xls['workbook']
@@ -115,7 +111,6 @@ if module == "addField":
     data = GetParams("data")
     option = GetParams("option_")
 
-    excel = GetGlobals("excel")
     xls = excel.file_[excel.actual_id]
 
     try:
@@ -148,7 +143,6 @@ if module == "filter":
     check = GetParams("value")
     no_check = GetParams("noCheck")
 
-    excel = GetGlobals("excel")
     xls = excel.file_[excel.actual_id]
     try:
 
@@ -190,7 +184,6 @@ if module == "listFields":
     pivotTableName = GetParams("table")
     result = GetParams("result")
 
-    excel = GetGlobals("excel")
     xls = excel.file_[excel.actual_id]
     try:
         wb = xls['workbook']
@@ -212,7 +205,6 @@ if module == "changeOrigin":
     sheet = GetParams("sheet")
     pivotTableName = GetParams("table")
     range_ = GetParams("range")
-    excel = GetGlobals("excel")
 
     try:
         xls = excel.file_[excel.actual_id]
@@ -241,7 +233,6 @@ if module == "getItems":
     data = GetParams("filter")
     result = GetParams("result")
 
-    excel = GetGlobals("excel")
     xls = excel.file_[excel.actual_id]
     try:
 
@@ -260,3 +251,79 @@ if module == "getItems":
         print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
         PrintException()
         raise e
+try:
+    if module == "filter_slider":
+
+        sheet_name = GetParams("sheet")
+        slider_name = GetParams("name")
+        start_date = GetParams("start")
+        end_date = GetParams("end")
+
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+        sheet = wb.sheets[sheet_name]
+        sheet.select()
+        wb.api.SlicerCaches(slider_name).TimelineState.SetFilterDateRange(start_date, end_date)
+
+    if module == "create_slider":
+        sheet_name = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        field = GetParams("field")
+        position = GetParams("range")
+
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+
+        if not sheet_name in [sh.name for sh in wb.sheets]:
+            raise Exception(f"The name {sheet_name} does not exist in the book")
+
+        sheet = wb.sheets[sheet_name]
+        pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName)
+
+        start = position
+        end = None
+        if ":" in position:
+            cells = position.split(":")
+            start = cells[0]
+            end = cells[1]
+
+        top = sheet.range(start).api.Cells.Top
+        left = sheet.range(start).api.Cells.Left
+        width = 262.5
+        height = 108
+        print(top, left, height, width)
+        if end is not None:
+            width = sheet.range(end).api.Cells.Left - left
+            height = sheet.range(end).api.Cells.Top - top
+
+        sheet.select()
+        macro = f"""
+Sub RocketAddSlider()
+'
+' RocketAddSlider Macro
+'
+
+'
+ActiveWorkbook.SlicerCaches.Add2(ActiveSheet.PivotTables("{pivotTableName}"), _
+        "{field}", , xlTimeline).Slicers.Add ActiveSheet, , "{field}", "{field}", {top} _
+        , {left}, {width}, {height}
+End Sub"""
+
+        try:
+            m = wb.macro("RocketAddSlider")
+            m.run()
+        except:
+            tmp = wb.api.VBProject.VBComponents.Add(1)
+            tmp.CodeModule.AddFromString(macro)
+            m = wb.macro("RocketAddSlider")
+            m.run()
+
+
+
+
+
+except Exception as e:
+    print("\x1B[" + "31;40mError\x1B[" + "0m")
+    PrintException()
+    raise e
+
