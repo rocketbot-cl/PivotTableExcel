@@ -30,10 +30,8 @@ import sys
 
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + 'AdvancedExcel' + os.sep + 'libs' + os.sep
-sys.path.append(cur_path)
-
-global constants
-global abc
+if cur_path not in sys.path:
+   sys.path.append(cur_path)
 
 constants = {"xlRowField": 1, "xlColumnField": 2, "xlPageField": 3}
 abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
@@ -42,12 +40,12 @@ abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o'
 excel = GetGlobals("excel")
 module = GetParams("module")
 
-if module == "createPivotTable":
-    data = GetParams("data")
-    destination = GetParams("destination")
-    table_name = GetParams("tableName")
+try:
+    if module == "createPivotTable":
+        data = GetParams("data")
+        destination = GetParams("destination")
+        table_name = GetParams("tableName")
 
-    try:
         xls = excel.file_[excel.actual_id]
         wb = xls['workbook']
         # wb = xw.Book("ruta")
@@ -90,30 +88,26 @@ if module == "createPivotTable":
         pivot_table = wb.api.PivotCaches().Create(SourceType=1, SourceData=source_range)
         pivot_table.CreatePivotTable(TableDestination=pivotTargetRange, TableName=table_name)
 
-    except Exception as e:
-        PrintException()
-        raise e
 
-if module == "refreshPivot":
-    sheet = GetParams("sheet")
-    pivotTableName = GetParams("table")
+    if module == "refreshPivot":
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
 
-    xls = excel.file_[excel.actual_id]
-    wb = xls['workbook']
-    wb.sheets[sheet].select()
-    print(dir(wb.api.ActiveSheet.PivotTables(pivotTableName)))
-    wb.api.ActiveSheet.PivotTables(pivotTableName).PivotCache().refresh()
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+        wb.sheets[sheet].select()
+        print(dir(wb.api.ActiveSheet.PivotTables(pivotTableName)))
+        wb.api.ActiveSheet.PivotTables(pivotTableName).PivotCache().refresh()
 
-if module == "addField":
+    if module == "addField":
 
-    sheet = GetParams("sheet")
-    pivotTableName = GetParams("table")
-    data = GetParams("data")
-    option = GetParams("option_")
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        data = GetParams("data")
+        option = GetParams("option_")
 
-    xls = excel.file_[excel.actual_id]
+        xls = excel.file_[excel.actual_id]
 
-    try:
         wb = xls['workbook']
         # wb = xw.Book("ruta")
         sht = wb.sheets[sheet].select()
@@ -130,21 +124,17 @@ if module == "addField":
                 field = pivot_table.PivotFields(d)
                 pivot_table.AddDataField(field, "Suma de {value}".format(value=d))
 
-    except Exception as e:
-        PrintException()
-        raise e
 
+    if module == "filter":
 
-if module == "filter":
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        data = GetParams("filter")
+        check = GetParams("value")
+        no_check = GetParams("noCheck")
+        clean = GetParams("clean")
 
-    sheet = GetParams("sheet")
-    pivotTableName = GetParams("table")
-    data = GetParams("filter")
-    check = GetParams("value")
-    no_check = GetParams("noCheck")
-
-    xls = excel.file_[excel.actual_id]
-    try:
+        xls = excel.file_[excel.actual_id]
 
         wb = xls['workbook']
         sht = wb.sheets[sheet].select()
@@ -152,40 +142,50 @@ if module == "filter":
         pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
         filter_ = pivotTable.PivotFields(data)
 
+        if clean is not None:
+            clean = eval(clean)
+        if clean:
+            filter_.ClearAllFilters()
+
         if check:
             check = eval(check) if check.startswith("[") else check.split(",")
+            for data in check:
+                filter_.PivotItems(data).Visible = True
         if no_check:
             no_check = eval(no_check) if no_check.startswith("[") else no_check.split(",")
+            for data in no_check:
+                filter_.PivotItems(data).Visible = False
+        
+        # exit()
+        
+        
+            
+        # for f in filter_.PivotItems():
 
-        for f in filter_.PivotItems():
+        #     if check and check != "" and check is not None:
 
-            if check and check != "" and check is not None:
+        #         if f.Name in check:
+        #             f.Visible = True
 
-                if f.Name in check:
-                    f.Visible = True
+        #         if f.Name not in check:
+        #             f.Visible = False
 
-                if f.Name not in check:
-                    f.Visible = False
+        #     if no_check and no_check != "" and no_check is not None and f.Name != "#N/A":
 
-            if no_check and no_check != "" and no_check is not None and f.Name != "#N/A":
+        #         if f.Name in no_check:
+        #             f.Visible = False
 
-                if f.Name in no_check:
-                    f.Visible = False
+        #         if f.Name not in no_check:
+        #             f.Visible = False
 
-                if f.Name not in no_check:
-                    f.Visible = False
 
-    except Exception as e:
-        PrintException()
-        raise e
+    if module == "listFields":
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        result = GetParams("result")
 
-if module == "listFields":
-    sheet = GetParams("sheet")
-    pivotTableName = GetParams("table")
-    result = GetParams("result")
+        xls = excel.file_[excel.actual_id]
 
-    xls = excel.file_[excel.actual_id]
-    try:
         wb = xls['workbook']
         sht = wb.sheets[sheet].select()
 
@@ -197,16 +197,11 @@ if module == "listFields":
 
         SetVar(result, fields)
 
-    except Exception as e:
-        PrintException()
-        raise e
+    if module == "changeOrigin":
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        range_ = GetParams("range")
 
-if module == "changeOrigin":
-    sheet = GetParams("sheet")
-    pivotTableName = GetParams("table")
-    range_ = GetParams("range")
-
-    try:
         xls = excel.file_[excel.actual_id]
         wb = xls['workbook']
         sh = wb.sheets[sheet]
@@ -221,20 +216,15 @@ if module == "changeOrigin":
         pivot_table = wb.api.PivotCaches().Create(SourceType=1, SourceData=source_range, Version=6)
         pivot.ChangePivotCache(pivot_table)
 
-    except Exception as e:
-        print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
-        PrintException()
-        raise e
 
-if module == "getItems":
+    if module == "getItems":
 
-    sheet = GetParams("sheet")
-    pivotTableName = GetParams("table")
-    data = GetParams("filter")
-    result = GetParams("result")
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        data = GetParams("filter")
+        result = GetParams("result")
 
-    xls = excel.file_[excel.actual_id]
-    try:
+        xls = excel.file_[excel.actual_id]
 
         wb = xls['workbook']
         sht = wb.sheets[sheet].select()
@@ -247,11 +237,6 @@ if module == "getItems":
         if result:
             SetVar(result, items)
 
-    except Exception as e:
-        print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
-        PrintException()
-        raise e
-try:
     if module == "filter_slider":
 
         sheet_name = GetParams("sheet")
@@ -319,7 +304,24 @@ End Sub"""
             m.run()
 
 
+    if module == "visible":
 
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        data = GetParams("filter")
+        field = GetParams("value")
+    
+        result = GetParams("result")
+
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+        sht = wb.sheets[sheet].select()
+
+        pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
+        filter_ = pivotTable.PivotFields(data)
+        is_visible = filter_.PivotItems(field).Visible
+        if result:
+            SetVar(result, is_visible)
 
 
 except Exception as e:

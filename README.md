@@ -18,7 +18,8 @@ Module with options to work Pivot tables in excel.
 ![alt text](https://github.com/rocketbot-cl/PivotTableExcel/blob/master/example/pivot.png)
 
 ## Updates
-
+### 06-May-2021
+- Filter status: Returns True if the filter is checked
 ### 28-Sep-2020
 - Change pivot table data: Change range data of Pivot Table
 
