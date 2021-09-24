@@ -27,11 +27,32 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 from __future__ import unicode_literals
 import os
 import sys
+# from string import ascii_letters
+# result32 = stringMod.ascii_letters
+# print(result32)
+
 
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + 'AdvancedExcel' + os.sep + 'libs' + os.sep
 if cur_path not in sys.path:
    sys.path.append(cur_path)
+
+global ascii_letters
+ascii_letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+def column_to_number(col):
+    num = 0
+    for c in col:
+        if c in ascii_letters:
+            num = num * 26 + (ord(c.upper()) - ord('A')) + 1
+    return num
+
+def number_to_column(n):
+    string2 = ""
+    while n > 0:
+        n, remainder = divmod(n - 1, 26)
+        string2 = chr(65 + remainder) + string2
+    return string2
 
 constants = {"xlRowField": 1, "xlColumnField": 2, "xlPageField": 3}
 abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
@@ -322,6 +343,66 @@ End Sub"""
         is_visible = filter_.PivotItems(field).Visible
         if result:
             SetVar(result, is_visible)
+
+    if module == "pivot_table_tabular":
+
+
+        
+        sheet_name = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        fields = eval(GetParams("fields"))
+        startColumn = GetParams("startColumn")
+        startRow = GetParams("startRow")
+
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+
+        if not sheet_name in [sh.name for sh in wb.sheets]:
+            raise Exception(f"The name {sheet_name} does not exist in the book")
+
+        sheet = wb.sheets[sheet_name]
+        pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName)
+
+        actualColumnNumber = column_to_number(startColumn)
+        actualColumnLetter = number_to_column(actualColumnNumber)
+        endColumn = actualColumnNumber + len(fields)
+
+        macro = """
+Sub RocketMakePivotTableTabular()
+'
+' RocketMakePivotTableTabular Macro
+'
+
+'
+"""
+        for eachField in fields:
+
+            macro += f"""
+
+    Range("{actualColumnLetter}{startRow}").Select
+    ActiveSheet.PivotTables("{pivotTableName}").PivotFields("{eachField}").LayoutForm = xlTabular
+
+"""
+
+            actualColumnNumber = actualColumnNumber + 1
+            actualColumnLetter = number_to_column(actualColumnNumber)
+
+        macro += """
+        
+End Sub
+"""
+
+        sheet.select()
+
+        print(macro)
+        try:
+            m = wb.macro("RocketMakePivotTableTabular")
+            m.run()
+        except:
+            tmp = wb.api.VBProject.VBComponents.Add(1)
+            tmp.CodeModule.AddFromString(macro)
+            m = wb.macro("RocketMakePivotTableTabular")
+            m.run()
 
 
 except Exception as e:
