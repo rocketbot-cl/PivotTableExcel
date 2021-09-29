@@ -350,9 +350,11 @@ End Sub"""
         
         sheet_name = GetParams("sheet")
         pivotTableName = GetParams("table")
-        fields = eval(GetParams("fields"))
-        startColumn = GetParams("startColumn")
-        startRow = GetParams("startRow")
+        fields = ""
+        try:
+            fields = eval(GetParams("fields"))
+        except:
+            pass
 
         xls = excel.file_[excel.actual_id]
         wb = xls['workbook']
@@ -361,49 +363,14 @@ End Sub"""
             raise Exception(f"The name {sheet_name} does not exist in the book")
 
         sheet = wb.sheets[sheet_name]
-        pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName)
-
-        actualColumnNumber = column_to_number(startColumn)
-        actualColumnLetter = number_to_column(actualColumnNumber)
-        endColumn = actualColumnNumber + len(fields)
-
-        macro = """
-Sub RocketMakePivotTableTabular()
-'
-' RocketMakePivotTableTabular Macro
-'
-
-'
-"""
-        for eachField in fields:
-
-            macro += f"""
-
-    Range("{actualColumnLetter}{startRow}").Select
-    ActiveSheet.PivotTables("{pivotTableName}").PivotFields("{eachField}").LayoutForm = xlTabular
-
-"""
-
-            actualColumnNumber = actualColumnNumber + 1
-            actualColumnLetter = number_to_column(actualColumnNumber)
-
-        macro += """
-        
-End Sub
-"""
-
-        sheet.select()
-
-        print(macro)
-        try:
-            m = wb.macro("RocketMakePivotTableTabular")
-            m.run()
-        except:
-            tmp = wb.api.VBProject.VBComponents.Add(1)
-            tmp.CodeModule.AddFromString(macro)
-            m = wb.macro("RocketMakePivotTableTabular")
-            m.run()
-
+        pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName).PivotFields()
+        if fields != "":
+            for each in pivot_table:
+                if each.Name in fields:
+                    each.LayoutForm = 0
+        else:
+            for each in pivot_table:
+                each.LayoutForm = 0
 
 except Exception as e:
     print("\x1B[" + "31;40mError\x1B[" + "0m")

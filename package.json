@@ -940,33 +940,7 @@
               },
               "id": "fields",
               "css": "col-md-6"
-            },
-            {
-              "type": "input",
-              "placeholder": {
-                "es": "A",
-                "en": "A"
-              },
-              "title": {
-                "es": "Columna donde empieza la tabla",
-                "en": "Starter column"
-              },
-              "id": "startColumn",
-              "css": "col-md-6"
-            },
-            {
-                "type": "input",
-                "placeholder": {
-                  "es": "3",
-                  "en": "3"
-                },
-                "title": {
-                  "es": "Fila donde empieza los datos a tabular",
-                  "en": "Starter row of data"
-                },
-                "id": "startRow",
-                "css": "col-md-6"
-              }
+            }
           ]
         },
         "video_youtube": "",
