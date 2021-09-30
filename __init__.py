@@ -362,7 +362,7 @@ End Sub"""
         if not sheet_name in [sh.name for sh in wb.sheets]:
             raise Exception(f"The name {sheet_name} does not exist in the book")
 
-        sheet = wb.sheets[sheet_name]
+        sheet = wb.sheets[sheet_name].select()
         pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName).PivotFields()
         if fields != "":
             for each in pivot_table:
