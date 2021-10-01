@@ -365,12 +365,10 @@ End Sub"""
         sheet = wb.sheets[sheet_name].select()
         pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName).PivotFields()
         if fields != "":
-            for each in pivot_table:
-                if each.Name in fields:
-                    each.LayoutForm = 0
-        else:
-            for each in pivot_table:
-                each.LayoutForm = 0
+            for cada in fields:
+                for each in pivot_table:
+                    if each.Name == cada:
+                        each.LayoutForm = 0
 
 except Exception as e:
     print("\x1B[" + "31;40mError\x1B[" + "0m")
