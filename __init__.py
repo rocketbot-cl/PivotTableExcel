@@ -370,6 +370,32 @@ End Sub"""
                     if each.Name == cada:
                         each.LayoutForm = 0
 
+    if module == "pivot_table_delete_subtotal":
+
+
+        
+        sheet_name = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        fields = ""
+        try:
+            fields = eval(GetParams("fields"))
+        except:
+            pass
+
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+
+        if not sheet_name in [sh.name for sh in wb.sheets]:
+            raise Exception(f"The name {sheet_name} does not exist in the book")
+
+        sheet = wb.sheets[sheet_name].select()
+        pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName).PivotFields()
+        if fields != "":
+            for cada in fields:
+                for each in pivot_table:
+                    if each.Name == cada:
+                        each.Subtotals = (False, False, False, False, False, False, False, False, False, False, False, False)
+
 except Exception as e:
     print("\x1B[" + "31;40mError\x1B[" + "0m")
     PrintException()
