@@ -889,13 +889,13 @@
     {
         "en": {
           "title": "Change table format to tabular",
-          "description": "Sets the timeline's filter.",
+          "description": "Change table format to tabular.",
           "title_options": null,
           "options": null
         },
         "es": {
           "title": "Cambiar tabla a formato tabular",
-          "description": "Modifica el filtro de un slider",
+          "description": "Cambiar tabla a formato tabular",
           "title_options": null,
           "options": null
         },
