@@ -1,50 +1,69 @@
-# PivotTableExcel
+# Pivot Table 
+  
+Module to work and interact with Pivot Tables  
 
-Module with options to work Pivot tables in excel.
+*Read this in other languages: [English](README.md), [Español](README.es.md).*
+
+## How to install this module
+  
+__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
-<ul>
-  <li>Create</li>  
-  <li>Refresh</li>  
-  <li>Add Field</li>
-  <li>Filter</li>
-  <li>List Field</li>
-  <li>Change pivot table data</li>
- 
-</ul>  
 
-**In the example robot you must change the values for yours.
+## Overview
 
-![alt text](https://github.com/rocketbot-cl/PivotTableExcel/blob/master/example/pivot.png)
 
-## Updates
-### 06-May-2021
-- Filter status: Returns True if the filter is checked
-### 28-Sep-2020
-- Change pivot table data: Change range data of Pivot Table
+1. Create  
+Create a new pivot table
 
-<h2>Dependencies</h2>
+2. Refresh  
+Refresh a pivot table
 
-<ul>
-  <li>
-    <strong>
-      <a href="https://pypi.org/project/xlwings/">xlwings</a>
-    </strong> 
-  </li>  
-</ul>  
+3. Add field  
+Add field to a pivot table
 
-<ul>
-  <li>
-    <strong>
-      <a href="https://pypi.org/project/xlwings/">xlwings</a>
-    </strong> 
-  </li>  
-</ul>  
+4. Filter  
+Filter a pivot table
 
-<h2>License</h2>
+5. List Fields  
+List all available table fields
 
-<p><a href="http://badges.mit-license.org" rel="nofollow"><img src="https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265" alt="License" data-canonical-src="http://img.shields.io/:license-mit-blue.svg?style=flat-square" style="max-width:100%;"></a></p>
+6. Change pivot table data  
+Change data range of Pivot Table
 
-<ul>
-  <li><strong><a href="http://opensource.org/licenses/mit-license.php" rel="nofollow">MIT license</a></strong></li>
-</ul>  
+7. List Filter Items   
+Return all items from filter
+
+8. Insert timeline  
+Create a new timeline.
+
+9. Filter slider  
+Sets the timeline's filter.
+
+10. Filter status  
+Returns True if the filter is checked
+
+11. Change table format to tabular  
+Changes the field of the pivot table to tabular format.
+
+12. Delete subtotals  
+Erase the subtotals from the pivot table.
+
+13. Repets label  
+Allows to the pivot table to repet labels.  
+
+
+
+
+----
+### OS
+
+- windows
+- mac
+
+### Dependencies
+- [**xlwings**](https://pypi.org/project/xlwings/)
+### License
+  
+![MIT](https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265)  
+[MIT](http://opensource.org/licenses/mit-license.ph)
