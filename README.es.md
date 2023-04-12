@@ -1,12 +1,16 @@
+
+
+
+
 # Tablas dinámicas
   
-Módulo para trabajar e interactuar con tablas dinámicas 
-
-*Read this in other languages: [English](README.md), [Español](README.es.md).*
+Módulo para trabajar e interactuar con Tablas Dinámicas de Microsoft Excel. 
 
 ## Como instalar este módulo
   
-__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Rocketbot.  
+Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
+1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
+2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.
 
 
 
@@ -22,34 +26,40 @@ Actualiza una tabla dinámica
 3. Agregar campo  
 Agrega un campo a una tabla dinámica
 
-4. Filtrar  
+4. Remover campo  
+Remover un campo de una tabla dinámica
+
+5. Filtrar  
 Filtra una tabla dinámica
 
-5. Listar Campos  
+6. Filtrar Valores  
+Filtra valores de una tabla dinámica
+
+7. Listar Campos  
 Lista todos los campos disponibles
 
-6. Cambiar origen de datos  
+8. Cambiar origen de datos  
 Cambia el rango de origen de los datos de una tabla dinámica
 
-7. Lista items de filtro  
+9. Lista items de filtro  
 Devuelve una lista con los items de un filtro
 
-8. Insertar Línea de tiempo  
+10. Insertar Línea de tiempo  
 Crea una nueva línea de tiempo
 
-9. Filtrar Slider  
+11. Filtrar Slider  
 Modifica el filtro de un slider
 
-10. Estado de filtro  
-Retorna True si el filtro está marcado
+12. Estado de filtro  
+Retorna True si el filtro está marcadoa
 
-11. Cambiar tabla a formato tabular  
+13. Cambiar tabla a formato tabular  
 Altera los campos de la tabla dinamica a formato tabular.
 
-12. Borrar subtotales  
+14. Borrar subtotales  
 Elimina los subtotales de la tabla dinamica.
 
-13. Repetir etiquetas de elementos  
+15. Repetir etiquetas de elementos  
 Permite a la tabla dinamica repetir etiquetas.  
 
 

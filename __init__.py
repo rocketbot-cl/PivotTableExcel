@@ -62,6 +62,7 @@ def number_to_column(n):
     return string2
 
 constants = {"xlRowField": 1, "xlColumnField": 2, "xlPageField": 3}
+functions = {"xlSum": -4157, "xlCount": -4112, "xlAverage": -4106, "xlProduct": -4149, "xlMax": -4136, "xlMin": -4139}
 abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
            'w', 'x', 'y', 'z']
 
@@ -140,8 +141,11 @@ try:
         sheet = GetParams("sheet")
         pivotTableName = GetParams("table")
         data = GetParams("data")
+        
         option = GetParams("option_")
-
+        name = GetParams("data_field_name")
+        func = GetParams("data_field_func")
+        
         xls = excel.file_[excel.actual_id]
 
         wb = xls['workbook']
@@ -149,18 +153,49 @@ try:
         sht = wb.sheets[sheet].select()
 
         pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName)
+        
+        fields_names = [field.Name for field in pivot_table.PivotFields()]
+        
         for d in data.split(","):
-            print(d)
             cubeField = pivot_table.PivotFields(d)
             if option != "data":
                 cubeField.Orientation = constants[option]
                 cubeField.Position = 1
-
             else:
+                name_ = name if name else option.strip('xl') + " {value}".format(value=d)
+                if name_ in fields_names:
+                    raise Exception("Cannot have the same name as one of the source fields, choose another...")
+
                 field = pivot_table.PivotFields(d)
-                pivot_table.AddDataField(field, "Suma de {value}".format(value=d))
+                pivot_table.AddDataField(field, name_, functions[func])
+                
+                # field = pivot_table.PivotFields("Suma de {value}".format(value=d))
+                # field.Function = -4157
+    
+    if module == "removeField":
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        data = GetParams("data")
+        
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+        sht = wb.sheets[sheet].select()
 
-
+        pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName)
+        
+        # Get the fields of the pivot table
+        row_fields = [field.Name for field in pivot_table.RowFields]
+        column_fields = [field.Name for field in pivot_table.ColumnFields]
+        data_fields = [field.Name for field in pivot_table.DataFields]
+        page_fields = [field.Name for field in pivot_table.PageFields]
+        fields_names = row_fields + column_fields + data_fields + page_fields
+                
+        field = pivot_table.PivotFields(data)
+        if field.Name in fields_names:
+            field.Orientation = 0
+        else:
+            raise Exception("Can't find field...")
+        
     if module == "filter":
 
         sheet = GetParams("sheet")
@@ -185,12 +220,25 @@ try:
 
         if check:
             check = eval(check) if check.startswith("[") else check.split(",")
-            for data in check:
-                filter_.PivotItems(data).Visible = True
+
+            for item in check:
+                filter_.PivotItems(item).Visible = True
+
+            if not no_check:
+                for item in filter_.PivotItems():
+                    if item.Name not in check:
+                        filter_.PivotItems(item.Name).Visible = False
+                
         if no_check:
             no_check = eval(no_check) if no_check.startswith("[") else no_check.split(",")
-            for data in no_check:
-                filter_.PivotItems(data).Visible = False
+            
+            if not check:
+                for item in filter_.PivotItems():
+                    if item.Name not in no_check:
+                        filter_.PivotItems(item.Name).Visible = True
+            
+            for item in no_check:
+                filter_.PivotItems(item).Visible = False
     
     if module == "filter_value":
 
@@ -222,7 +270,7 @@ try:
             filter_value = eval(check)
             filter_type = eval(filter_type)
             
-            data_field = wb.api.ActiveSheet.PivotTables(pivotTableName).PivotFields('Suma de Horas')
+            data_field = wb.api.ActiveSheet.PivotTables(pivotTableName).PivotFields(field)
             
             if filter_type in [13, 14] and isinstance(filter_value, list) and len(filter_value) == 2:
                 value1 = filter_value[0]
