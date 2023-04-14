@@ -46,6 +46,10 @@
               "es": "Ingrese Rango de datos: ",
               "en": "Data range: "
             },
+            "description": {
+              "es": "Ingrese el rango de datos que desea utilizar para crear la tabla dinámica",
+              "en": "Enter the data range you want to use to create the pivot table"
+            },
             "id": "data",
             "css": "col-md-6"
           },
@@ -59,6 +63,10 @@
               "es": "Celda de destino ",
               "en": "Destination Cell: "
             },
+            "description": {
+              "es": "Ingrese la celda donde desea que se cree la tabla dinámica",
+              "en": "Enter the cell where you want the pivot table to be created"
+            },
             "id": "destination",
             "css": "col-md-6"
           },
@@ -71,6 +79,10 @@
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
+            },
+            "description": {
+              "es": "Ingrese el nombre de la tabla dinámica",
+              "en": "Enter the pivot table name"
             },
             "id": "tableName",
             "css": "col-md-12"
@@ -116,6 +128,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Name of the sheet where the pivot table is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -145,6 +161,10 @@
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivote table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica a actualizar",
+              "en": "Name of the pivot table to update"
             },
             "id": "table",
             "css": "col-md-6"
@@ -190,6 +210,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Name of the sheet where the pivot table is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -202,6 +226,10 @@
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
             },
             "id": "table",
             "css": "col-md-6"
@@ -225,9 +253,17 @@
           },
           {
             "type": "select",
+            "placeholder": {
+              "es": "Add Data",
+              "en": "Add Data"
+            },
             "title": {
               "es": "Selecciona una opción",
               "en": "Select option"
+            },
+            "description": {
+              "es": "Selecciona una opción para agregar un campo a la tabla dinámica",
+              "en": "Select option to add a field to the pivot table"
             },
             "options": [
               {
@@ -381,6 +417,10 @@
               "es": "Campo a remover",
               "en": "Field to remove "
             },
+            "description": {
+              "es": "Nombre del campo a agregar",
+              "en": "Name of the field to add"
+            },
             "help": {
               "es": "Campos separados por coma",
               "en": "Comma separated fields"
@@ -429,6 +469,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Name of the sheet where the pivot table is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -441,6 +485,10 @@
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
             },
             "id": "table",
             "css": "col-md-6"
@@ -455,18 +503,26 @@
               "es": "Nombre del filtro: ",
               "en": "Filter name: "
             },
+            "description": {
+              "es": "Nombre del campo que se quiere filtrar",
+              "en": "Name of the field to be filtered"
+            },
             "id": "filter",
             "css": "col-md-6"
           },
           {
             "type": "checkbox",
             "placeholder": {
-              "es": "",
-              "en": ""
+              "es": "True",
+              "en": "True"
             },
             "title": {
               "es": "Limpiar todos los filtros",
               "en": "Clear All Filters"
+            },
+            "description": {
+              "es": "Si se selecciona, se limpiarán todos los filtros de la tabla dinámica",
+              "en": "If selected, all filters of the pivot table will be cleared"
             },
             "id": "clean",
             "css": "col-md-6"
@@ -480,6 +536,10 @@
             "title": {
               "es": "Valor(es) del filtro a marcar: ",
               "en": "Filter(s) name to check: "
+            },
+            "description": {
+              "es": "Nombre del valor del filtro que se quiere marcar",
+              "en": "Name of the filter value to be checked"
             },
             "help": {
               "es": "Valores separados por coma",
@@ -497,6 +557,10 @@
             "title": {
               "es": "Valor(es) del filtro a desmarcar: ",
               "en": "Filter(s) name to uncheck: "
+            },
+            "description": {
+              "es": "Nombre del valor del filtro que se quiere desmarcar",
+              "en": "Name of the filter value to be unchecked"
             },
             "help": {
               "es": "Valores separados por coma",
@@ -723,6 +787,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Sheet name where the pivot table is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -736,6 +804,10 @@
               "es": "Nombre de la tabla dinámica: ",
               "en": "pivot table name: "
             },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
+            },
             "id": "table",
             "css": "col-md-6"
           },
@@ -748,6 +820,10 @@
             "title": {
               "es": "Asignar resultado a variable",
               "en": "Assign result to variable: "
+            },
+            "description": {
+              "es": "Nombre de la variable donde se almacenará el resultado",
+              "en": "Variable name where the result will be stored"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
@@ -797,6 +873,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Name of the sheet where the pivot table is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -810,6 +890,10 @@
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
             },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
+            },
             "id": "table",
             "css": "col-md-6"
           },
@@ -822,6 +906,10 @@
             "title": {
               "es": "Nuevo Rango",
               "en": "New Range: "
+            },
+            "description": {
+              "es": "Rango de datos de la tabla dinámica",
+              "en": "Pivot table data range"
             },
             "id": "range",
             "css": "col-md-12"
@@ -867,6 +955,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja",
+              "en": "Sheet name"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -879,6 +971,10 @@
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
             },
             "id": "table",
             "css": "col-md-6"
@@ -893,6 +989,10 @@
               "es": "Nombre del filtro: ",
               "en": "Filter name: "
             },
+            "description": {
+              "es": "Nombre del filtro",
+              "en": "Filter name"
+            },
             "id": "filter",
             "css": "col-md-12"
           },
@@ -905,6 +1005,10 @@
             "title": {
               "es": "Asignar resultado a variable",
               "en": "Assign result to variable: "
+            },
+            "description": {
+              "es": "Nombre de la variable donde se almacenará el resultado",
+              "en": "Variable name to store the result"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
@@ -941,7 +1045,7 @@
         "title_options": null,
         "options": null
       },
-      "pt": {
+      "pr": {
         "title": "Inserir linha do tempo",
         "description": "Este comando cria uma nova linha do tempo",
         "title_options": null,
@@ -954,13 +1058,18 @@
             "type": "input",
             "placeholder": {
               "es": "Hoja 1",
-              "pt": "Hoja 1",
+              "pr": "Hoja 1",
               "en": "Plan1"
             },
             "title": {
               "es": "Hoja: ",
               "en": "Sheet: ",
-              "pt": "Planilha"
+              "pr": "Planilha"
+            },
+            "description": {
+              "es": "Nombre de la hoja donde se insertará la línea de tiempo",
+              "en": "Name of the sheet where the timeline will be inserted",
+              "pr": "Nome da planilha onde a linha do tempo será inserida"
             },
             "id": "sheet",
             "css": "col-md-6"
@@ -969,13 +1078,18 @@
             "type": "input",
             "placeholder": {
               "es": "TablaDinámica1: ",
-              "pt": "TabelaDinâmica1: ",
+              "pr": "TabelaDinâmica1: ",
               "en": "PivotTable1: "
             },
             "title": {
               "es": "Nombre de la tabla dinámica: ",
-              "pt": "Nome do tabela dinâmica: ",
+              "pr": "Nome do tabela dinâmica: ",
               "en": "Pivote table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica que se usará para crear la línea de tiempo",
+              "pr": "Nome da tabela dinâmica que será usada para criar a linha do tempo",
+              "en": "Name of the pivot table that will be used to create the timeline"
             },
             "id": "table",
             "css": "col-md-6"
@@ -984,13 +1098,18 @@
             "type": "input",
             "placeholder": {
               "es": "Campo ",
-              "pt": "Campo ",
+              "pr": "Campo ",
               "en": "Field "
             },
             "title": {
               "es": "Campo de la tabla dinámica: ",
-              "pt": "Campo do tabela dinâmica: ",
+              "pr": "Campo do tabela dinâmica: ",
               "en": "Pivot table field: "
+            },
+            "description": {
+              "es": "Nombre del campo de la tabla dinámica que se usará para crear la línea de tiempo",
+              "pr": "Nome do campo do tabela dinâmica que será usado para criar a linha do tempo",
+              "en": "Name of the pivot table field that will be used to create the timeline"
             },
             "id": "field",
             "css": "col-md-6"
@@ -999,13 +1118,18 @@
             "type": "input",
             "placeholder": {
               "es": "A1:D20",
-              "pt": "A1:D20",
+              "pr": "A1:D20",
               "en": "A1:D20"
             },
             "title": {
               "es": "Rango donde posicionar",
-              "pt": "Interválo onde posicionar",
+              "pr": "Interválo onde posicionar",
               "en": "Position range: "
+            },
+            "description": {
+              "es": "Rango donde se insertará la línea de tiempo",
+              "pr": "Interválo onde a linha do tempo será inserida",
+              "en": "Range where the timeline will be inserted"
             },
             "id": "range",
             "css": "col-md-6"
@@ -1051,6 +1175,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra el slider",
+              "en": "Name of the sheet where the slider is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -1063,6 +1191,10 @@
             "title": {
               "es": "Nombre del slider: ",
               "en": "Slider name: "
+            },
+            "description": {
+              "es": "Nombre del slider",
+              "en": "Slider name"
             },
             "id": "name",
             "css": "col-md-6"
@@ -1077,6 +1209,10 @@
               "es": "Fecha de incio",
               "en": "Start date"
             },
+            "description": {
+              "es": "Fecha de inicio del filtro",
+              "en": "Start date of the filter"
+            },
             "id": "start",
             "css": "col-md-6"
           },
@@ -1089,6 +1225,10 @@
             "title": {
               "es": "Fecha final",
               "en": "End date"
+            },
+            "description": {
+              "es": "Fecha final del filtro",
+              "en": "End date of the filter"
             },
             "id": "end",
             "css": "col-md-6"
@@ -1117,7 +1257,7 @@
       },
       "es": {
         "title": "Estado de filtro",
-        "description": "Retorna True si el filtro está marcadoa",
+        "description": "Retorna True si el filtro está marcado",
         "title_options": null,
         "options": null
       },
@@ -1140,6 +1280,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra el filtro",
+              "en": "Sheet name where the filter is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -1152,6 +1296,10 @@
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica donde se encuentra el filtro",
+              "en": "Pivot table name where the filter is located"
             },
             "id": "table",
             "css": "col-md-6"
@@ -1166,6 +1314,10 @@
               "es": "Nombre del filtro: ",
               "en": "Filter name: "
             },
+            "description": {
+              "es": "Nombre del filtro que se desea consultar",
+              "en": "Filter name to be consulted"
+            },
             "id": "filter",
             "css": "col-md-6"
           },
@@ -1176,9 +1328,13 @@
               "en": "Name: "
             },
             "title": {
-              "es": "Nombre del filtro ",
-              "en": "Filter Name ",
-              "pr": "Nome do filtro"
+              "es": "Valor del filtro",
+              "en": "Filter value",
+              "pr": "Valor do filtro"
+            },
+            "description": {
+              "es": "Valor del filtro que se desea consultar",
+              "en": "Filter value to be consulted"
             },
             "id": "value",
             "css": "col-md-6"
@@ -1241,6 +1397,10 @@
                 "es": "Hoja: ",
                 "en": "Sheet: "
               },
+              "description": {
+                "es": "Nombre de la hoja donde se encuentra la tabla dinamica.",
+                "en": "Name of the sheet where the pivot table is located."
+              },
               "id": "sheet",
               "css": "col-md-6"
             },
@@ -1254,6 +1414,10 @@
                 "es": "Nombre de la tabla: ",
                 "en": "Table name: "
               },
+            "description": {
+                "es": "Nombre de la tabla dinamica.",
+                "en": "Name of the pivot table."
+            },
               "id": "table",
               "css": "col-md-6"
             },
@@ -1267,6 +1431,10 @@
                 "es": "Campos de la tabla",
                 "en": "Pivot fields"
               },
+            "description": {
+                "es": "Campos de la tabla dinamica.",
+                "en": "Pivot table fields."
+            },
               "id": "fields",
               "css": "col-md-6"
             }
@@ -1311,6 +1479,10 @@
                 "es": "Hoja: ",
                 "en": "Sheet: "
               },
+              "description": {
+                "es": "Nombre de la hoja donde se encuentra la tabla dinamica.",
+                "en": "Name of the sheet where the pivot table is located."
+              },
               "id": "sheet",
               "css": "col-md-6"
             },
@@ -1324,6 +1496,10 @@
                 "es": "Nombre de la tabla: ",
                 "en": "Table name: "
               },
+                "description": {
+                    "es": "Nombre de la tabla dinamica.",
+                    "en": "Name of the pivot table."
+                },
               "id": "table",
               "css": "col-md-6"
             },
@@ -1337,6 +1513,10 @@
                 "es": "Campos de la tabla",
                 "en": "Pivot fields"
               },
+                "description": {
+                    "es": "Campos de la tabla dinamica.",
+                    "en": "Pivot table fields."
+                },
               "id": "fields",
               "css": "col-md-6"
             }
@@ -1381,6 +1561,10 @@
                 "es": "Hoja: ",
                 "en": "Sheet: "
               },
+              "description": {
+                "es": "Nombre de la hoja donde se encuentra la tabla dinamica.",
+                "en": "Name of the sheet where the pivot table is located."
+              },
               "id": "sheet",
               "css": "col-md-6"
             },
@@ -1394,6 +1578,10 @@
                 "es": "Nombre de la tabla: ",
                 "en": "Table name: "
               },
+                "description": {
+                    "es": "Nombre de la tabla dinamica.",
+                    "en": "Name of the pivot table."
+                },
               "id": "table",
               "css": "col-md-6"
             },
@@ -1407,6 +1595,10 @@
                 "es": "Campos de la tabla",
                 "en": "Pivot fields"
               },
+                "description": {
+                    "es": "Campos de la tabla dinamica que se repetiran.",
+                    "en": "Pivot table fields that will be repeated."
+                },
               "id": "fields",
               "css": "col-md-6"
             }

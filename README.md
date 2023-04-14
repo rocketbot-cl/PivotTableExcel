@@ -1,8 +1,6 @@
-
-
-
-
 # Pivot tables
+
+*Read this in other languages: [English](README.md), [Español](README.es.md).*
   
 Module to work and interact with Pivot Tables from Microsoft Excel.
 
@@ -61,8 +59,6 @@ Erase the subtotals from the pivot table.
 
 15. Repeats label  
 Allows to the pivot table to repeat labels.  
-
-
 
 
 ----
