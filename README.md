@@ -1,12 +1,14 @@
-# Pivot Table 
-  
-Module to work and interact with Pivot Tables  
+# Pivot tables
 
 *Read this in other languages: [English](README.md), [Español](README.es.md).*
+  
+Module to work and interact with Pivot Tables from Microsoft Excel.
 
 ## How to install this module
   
-__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
+To install the module in Rocketbot Studio, it can be done in two ways:
+1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.
 
 
 
@@ -22,37 +24,41 @@ Refresh a pivot table
 3. Add field  
 Add field to a pivot table
 
-4. Filter  
+4. Remove field  
+Remove a field from a pivot table
+
+5. Filter  
 Filter a pivot table
 
-5. List Fields  
+6. Filter Values  
+Filter a pivot table values
+
+7. List Fields  
 List all available table fields
 
-6. Change pivot table data  
+8. Change pivot table data  
 Change data range of Pivot Table
 
-7. List Filter Items   
+9. List Filter Items   
 Return all items from filter
 
-8. Insert timeline  
+10. Insert timeline  
 Create a new timeline.
 
-9. Filter slider  
+11. Filter slider  
 Sets the timeline's filter.
 
-10. Filter status  
+12. Filter status  
 Returns True if the filter is checked
 
-11. Change table format to tabular  
+13. Change table format to tabular  
 Changes the field of the pivot table to tabular format.
 
-12. Delete subtotals  
+14. Delete subtotals  
 Erase the subtotals from the pivot table.
 
-13. Repets label  
-Allows to the pivot table to repet labels.  
-
-
+15. Repeats label  
+Allows to the pivot table to repeat labels.  
 
 
 ----
