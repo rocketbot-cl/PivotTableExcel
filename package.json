@@ -2,7 +2,7 @@
   "author": "Danilo Toro - Juan Siro",
   "description": "Module to work and interact with Pivot Tables from Microsoft Excel. | ",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "2.4.5",
+  "version": "2.4.7",
   "license": "MIT",
   "homepage": "http://rocketbot.com/",
   "linux": false,
@@ -850,7 +850,7 @@
     {
       "en": {
         "title": "Change pivot table data",
-        "description": "Change data range of Pivot Table",
+        "description": "Change the source data range of a pivot table",
         "title_options": null,
         "options": null
       },
@@ -900,8 +900,8 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "A1:R200",
-              "en": "A1:R200"
+              "es": "Sheet1!A1:R200",
+              "en": "Sheet1!A1:R200"
             },
             "title": {
               "es": "Nuevo Rango",
@@ -1251,13 +1251,13 @@
     {
       "en": {
         "title": "Filter status",
-        "description": "Returns True if the filter is checked",
+        "description": "Checks whether the element is marked in the field filter as visible or not visible. Return True or False respectively.",
         "title_options": null,
         "options": null
       },
       "es": {
         "title": "Estado de filtro",
-        "description": "Retorna True si el filtro está marcado",
+        "description": "Comprueba si el elemento está marcado en el filtro de campo como visible o no visible. Retornar True o Falso respectivamente.",
         "title_options": null,
         "options": null
       },
@@ -1311,8 +1311,8 @@
               "en": "Field "
             },
             "title": {
-              "es": "Nombre del filtro: ",
-              "en": "Filter name: "
+              "es": "Nombre del campo: ",
+              "en": "Field name: "
             },
             "description": {
               "es": "Nombre del filtro que se desea consultar",
@@ -1324,17 +1324,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Name: ",
-              "en": "Name: "
+              "es": "Valor: ",
+              "en": "Value: "
             },
             "title": {
-              "es": "Valor del filtro",
-              "en": "Filter value",
-              "pr": "Valor do filtro"
+              "es": "Elemento del filtro a controlar",
+              "en": "Filter element to check"
             },
             "description": {
-              "es": "Valor del filtro que se desea consultar",
-              "en": "Filter value to be consulted"
+              "es": "Valor del filtro de campo que se desea comprobar",
+              "en": "Field filter value to be checked"
             },
             "id": "value",
             "css": "col-md-6"
