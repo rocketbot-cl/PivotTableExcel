@@ -1,10 +1,10 @@
 {
-  "author": "Danilo Toro ",
-  "description": "Module to work and interact with Pivot Tables",
+  "author": "Danilo Toro - Juan Siro",
+  "description": "Module to work and interact with Pivot Tables from Microsoft Excel. | ",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "1.3.5",
+  "version": "2.4.7",
   "license": "MIT",
-  "homepage": "http://rocketbot.co/",
+  "homepage": "http://rocketbot.com/",
   "linux": false,
   "windows": true,
   "mac": true,
@@ -14,8 +14,9 @@
   },
   "name": "PivotTableExcel",
   "title": {
-    "en": "Pivot Table ",
-    "es": "Tablas dinámicas"
+    "en": "Pivot tables",
+    "es": "Tablas dinámicas",
+    "pr": "Tabelas dinâmicas"
   },
   "icon": " data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNzYuMzg5bW0iIGhlaWdodD0iMTc2LjM4OW1tIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIgdmlld0JveD0iMCAwIDE3NjM5IDE3NjM5Ij4NCiA8ZGVmcz4NCiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCiAgIDwhW0NEQVRBWw0KICAgIC5maWwwIHtmaWxsOiMxRTcxNDV9DQogICBdXT4NCiAgPC9zdHlsZT4NCiA8L2RlZnM+DQogPGcgaWQ9IkxheWVyX3gwMDIwXzEiPg0KICANCiAgPHBhdGggY2xhc3M9ImZpbDAiIGQ9Ik05NTk2IDM2MzRsMCAxMDI2NSAtNjEwMyAtMTA1OCAwIC04MTQ5IDYxMDMgLTEwNTh6bTI5MCAxMTg1bDQwNTMgMGMyMjQsMCAyNjcsNDQgMjY3LDI2N2wwIDczNjBjMCwyMjMgLTQzLDI2NyAtMjY3LDI2N2wtNDA1MyAwIDAgLTY5NCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTU4N3ptLTc4MDMgMTA3NzRsMTM0NzQgMCAyIC0xMzQ3NiAtMTM0NzggMCAyIDEzNDc2eiIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjcxMjksNjg2MSA2NTczLDgxMzMgNjE0MSw2OTM4IDU0NDYsNjk2OSA2MTM2LDg3MTAgNTM1OSwxMDQxMyA2MDQyLDEwNDY0IDY1OTAsOTIzOSA3MTAwLDEwNTM1IDc4ODYsMTA1NzggNzAzNCw4NzAzIDc4NDksNjgwOSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMjAxOSAxMzUxMywxMjAxOSAxMzUxMywxMDk1MyAxMTc1MywxMDk1MyAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMDYzMyAxMzUxMywxMDYzMyAxMzUxMyw5NTY2IDExNzUzLDk1NjYgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiAgPHBvbHlnb24gY2xhc3M9ImZpbDAiIHBvaW50cz0iMTE3NTMsOTI0NiAxMzUxMyw5MjQ2IDEzNTEzLDgxNzkgMTE3NTMsODE3OSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1Myw2NDczIDEzNTEzLDY0NzMgMTM1MTMsNTQwNiAxMTc1Myw1NDA2ICIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjExNzUzLDc4NTkgMTM1MTMsNzg1OSAxMzUxMyw2NzkzIDExNzUzLDY3OTMgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiA8L2c+DQoNCgk8bWV0YWRhdGE+DQoJCTxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6cmRmcz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8wMS9yZGYtc2NoZW1hIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4NCgkJCTxyZGY6RGVzY3JpcHRpb24gYWJvdXQ9Imh0dHBzOi8vaWNvbnNjb3V0LmNvbS9sZWdhbCNsaWNlbnNlcyIgZGM6dGl0bGU9Im1pY3Jvc29mdF9vZmZpY2VfZXhjZWwiIGRjOmRlc2NyaXB0aW9uPSJtaWNyb3NvZnRfb2ZmaWNlX2V4Y2VsIiBkYzpwdWJsaXNoZXI9Ikljb25zY291dCIgZGM6ZGF0ZT0iMjAxNy0wNC0yMSIgZGM6Zm9ybWF0PSJpbWFnZS9zdmcreG1sIiBkYzpsYW5ndWFnZT0iZW4iPg0KCQkJCTxkYzpjcmVhdG9yPg0KCQkJCQk8cmRmOkJhZz4NCgkJCQkJCTxyZGY6bGk+QWxleGFuZGVyIFBhbmFzb3Zza3k8L3JkZjpsaT4NCgkJCQkJPC9yZGY6QmFnPg0KCQkJCTwvZGM6Y3JlYXRvcj4NCgkJCTwvcmRmOkRlc2NyaXB0aW9uPg0KCQk8L3JkZjpSREY+DQogICAgPC9tZXRhZGF0YT48L3N2Zz4=",
   "children": [
@@ -45,6 +46,10 @@
               "es": "Ingrese Rango de datos: ",
               "en": "Data range: "
             },
+            "description": {
+              "es": "Ingrese el rango de datos que desea utilizar para crear la tabla dinámica",
+              "en": "Enter the data range you want to use to create the pivot table"
+            },
             "id": "data",
             "css": "col-md-6"
           },
@@ -58,6 +63,10 @@
               "es": "Celda de destino ",
               "en": "Destination Cell: "
             },
+            "description": {
+              "es": "Ingrese la celda donde desea que se cree la tabla dinámica",
+              "en": "Enter the cell where you want the pivot table to be created"
+            },
             "id": "destination",
             "css": "col-md-6"
           },
@@ -70,6 +79,10 @@
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
+            },
+            "description": {
+              "es": "Ingrese el nombre de la tabla dinámica",
+              "en": "Enter the pivot table name"
             },
             "id": "tableName",
             "css": "col-md-12"
@@ -115,18 +128,43 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Name of the sheet where the pivot table is located"
+            },
             "id": "sheet",
+            "css": "col-md-6"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "False",
+              "en": "False"
+            },
+            "title": {
+              "es": "Refrescar todo: ",
+              "en": "Refresh all: "
+            },
+            "help": {
+              "es": "Marcar el casillero para actualizar todas las Tablas Dinamicas de la hoja. Dejar el siguiente campo vacio.",
+              "en": "Check the box to update all PivotTables on the sheet. Leave the next field empty."
+            },
+            "id": "all",
             "css": "col-md-6"
           },
           {
             "type": "input",
             "placeholder": {
-              "es": "Name: ",
+              "es": "Nombre: ",
               "en": "Name: "
             },
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivote table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica a actualizar",
+              "en": "Name of the pivot table to update"
             },
             "id": "table",
             "css": "col-md-6"
@@ -172,6 +210,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Name of the sheet where the pivot table is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -185,14 +227,43 @@
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
             },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
+            },
             "id": "table",
             "css": "col-md-6"
           },
           {
+            "type": "input",
+            "placeholder": {
+              "es": "Field: ",
+              "en": "Field: "
+            },
+            "title": {
+              "es": "Campo a agregar",
+              "en": "Field to add "
+            },
+            "help": {
+              "es": "Campos separados por coma",
+              "en": "Comma separated fields"
+            },
+            "id": "data",
+            "css": "col-md-6"
+          },
+          {
             "type": "select",
+            "placeholder": {
+              "es": "Add Data",
+              "en": "Add Data"
+            },
             "title": {
               "es": "Selecciona una opción",
               "en": "Select option"
+            },
+            "description": {
+              "es": "Selecciona una opción para agregar un campo a la tabla dinámica",
+              "en": "Select option to add a field to the pivot table"
             },
             "options": [
               {
@@ -220,14 +291,135 @@
             "css": "col-md-6"
           },
           {
+            "type": "select",
+            "title": {
+              "es": "Selecciona una funcióm",
+              "en": "Select a function"
+            },
+            "help": {
+              "es": "Completar solo para la opción Add Data",
+              "en": "Fill it only for Add Data option"
+            },
+            "options": [
+              {
+                "title": "--Seleccione--",
+                "value": ""
+              },
+              {
+                "title": "Sum",
+                "value": "xlSum"
+              },
+              {
+                "title": "Count",
+                "value": "xlCount"
+              },
+              {
+                "title": "Average",
+                "value": "xlAverage"
+              },
+              {
+                "title": "Product",
+                "value": "xlProduct"
+              },
+              {
+                "title": "Max",
+                "value": "xlMax"
+              },
+              {
+                "title": "Min",
+                "value": "xlMin"
+              }
+            ],
+            "id": "data_field_func",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Suma de Ventas",
+              "en": "Sales Sum"
+            },
+            "title": {
+              "es": "Nombre de campo: ",
+              "en": "Field name: "
+            },
+            "help": {
+              "es": "Completar solo para la opción Add Data",
+              "en": "Fill it only for Add Data option"
+            },
+            "id": "data_field_name",
+            "css": "col-md-6"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNzYuMzg5bW0iIGhlaWdodD0iMTc2LjM4OW1tIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIgdmlld0JveD0iMCAwIDE3NjM5IDE3NjM5Ij4NCiA8ZGVmcz4NCiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCiAgIDwhW0NEQVRBWw0KICAgIC5maWwwIHtmaWxsOiMxRTcxNDV9DQogICBdXT4NCiAgPC9zdHlsZT4NCiA8L2RlZnM+DQogPGcgaWQ9IkxheWVyX3gwMDIwXzEiPg0KICANCiAgPHBhdGggY2xhc3M9ImZpbDAiIGQ9Ik05NTk2IDM2MzRsMCAxMDI2NSAtNjEwMyAtMTA1OCAwIC04MTQ5IDYxMDMgLTEwNTh6bTI5MCAxMTg1bDQwNTMgMGMyMjQsMCAyNjcsNDQgMjY3LDI2N2wwIDczNjBjMCwyMjMgLTQzLDI2NyAtMjY3LDI2N2wtNDA1MyAwIDAgLTY5NCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTU4N3ptLTc4MDMgMTA3NzRsMTM0NzQgMCAyIC0xMzQ3NiAtMTM0NzggMCAyIDEzNDc2eiIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjcxMjksNjg2MSA2NTczLDgxMzMgNjE0MSw2OTM4IDU0NDYsNjk2OSA2MTM2LDg3MTAgNTM1OSwxMDQxMyA2MDQyLDEwNDY0IDY1OTAsOTIzOSA3MTAwLDEwNTM1IDc4ODYsMTA1NzggNzAzNCw4NzAzIDc4NDksNjgwOSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMjAxOSAxMzUxMywxMjAxOSAxMzUxMywxMDk1MyAxMTc1MywxMDk1MyAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMDYzMyAxMzUxMywxMDYzMyAxMzUxMyw5NTY2IDExNzUzLDk1NjYgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiAgPHBvbHlnb24gY2xhc3M9ImZpbDAiIHBvaW50cz0iMTE3NTMsOTI0NiAxMzUxMyw5MjQ2IDEzNTEzLDgxNzkgMTE3NTMsODE3OSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1Myw2NDczIDEzNTEzLDY0NzMgMTM1MTMsNTQwNiAxMTc1Myw1NDA2ICIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjExNzUzLDc4NTkgMTM1MTMsNzg1OSAxMzUxMyw2NzkzIDExNzUzLDY3OTMgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiA8L2c+DQoNCgk8bWV0YWRhdGE+DQoJCTxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6cmRmcz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8wMS9yZGYtc2NoZW1hIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4NCgkJCTxyZGY6RGVzY3JpcHRpb24gYWJvdXQ9Imh0dHBzOi8vaWNvbnNjb3V0LmNvbS9sZWdhbCNsaWNlbnNlcyIgZGM6dGl0bGU9Im1pY3Jvc29mdF9vZmZpY2VfZXhjZWwiIGRjOmRlc2NyaXB0aW9uPSJtaWNyb3NvZnRfb2ZmaWNlX2V4Y2VsIiBkYzpwdWJsaXNoZXI9Ikljb25zY291dCIgZGM6ZGF0ZT0iMjAxNy0wNC0yMSIgZGM6Zm9ybWF0PSJpbWFnZS9zdmcreG1sIiBkYzpsYW5ndWFnZT0iZW4iPg0KCQkJCTxkYzpjcmVhdG9yPg0KCQkJCQk8cmRmOkJhZz4NCgkJCQkJCTxyZGY6bGk+QWxleGFuZGVyIFBhbmFzb3Zza3k8L3JkZjpsaT4NCgkJCQkJPC9yZGY6QmFnPg0KCQkJCTwvZGM6Y3JlYXRvcj4NCgkJCTwvcmRmOkRlc2NyaXB0aW9uPg0KCQk8L3JkZjpSREY+DQogICAgPC9tZXRhZGF0YT48L3N2Zz4=",
+      "module": "addField",
+      "module_name": "PivotTableExcel",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Remove field",
+        "description": "Remove a field from a pivot table",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Remover campo",
+        "description": "Remover un campo de una tabla dinámica",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Hoja 1",
+              "en": "Sheet1"
+            },
+            "title": {
+              "es": "Hoja: ",
+              "en": "Sheet: "
+            },
+            "id": "sheet",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Name: ",
+              "en": "Name: "
+            },
+            "title": {
+              "es": "Nombre de la tabla dinámica: ",
+              "en": "Pivot table name: "
+            },
+            "id": "table",
+            "css": "col-md-6"
+          },
+          {
             "type": "input",
             "placeholder": {
               "es": "Field: ",
               "en": "Field: "
             },
             "title": {
-              "es": "Campo a agregar",
-              "en": "Field to add "
+              "es": "Campo a remover",
+              "en": "Field to remove "
+            },
+            "description": {
+              "es": "Nombre del campo a agregar",
+              "en": "Name of the field to add"
             },
             "help": {
               "es": "Campos separados por coma",
@@ -240,7 +432,7 @@
       },
       "video_youtube": "",
       "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNzYuMzg5bW0iIGhlaWdodD0iMTc2LjM4OW1tIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIgdmlld0JveD0iMCAwIDE3NjM5IDE3NjM5Ij4NCiA8ZGVmcz4NCiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCiAgIDwhW0NEQVRBWw0KICAgIC5maWwwIHtmaWxsOiMxRTcxNDV9DQogICBdXT4NCiAgPC9zdHlsZT4NCiA8L2RlZnM+DQogPGcgaWQ9IkxheWVyX3gwMDIwXzEiPg0KICANCiAgPHBhdGggY2xhc3M9ImZpbDAiIGQ9Ik05NTk2IDM2MzRsMCAxMDI2NSAtNjEwMyAtMTA1OCAwIC04MTQ5IDYxMDMgLTEwNTh6bTI5MCAxMTg1bDQwNTMgMGMyMjQsMCAyNjcsNDQgMjY3LDI2N2wwIDczNjBjMCwyMjMgLTQzLDI2NyAtMjY3LDI2N2wtNDA1MyAwIDAgLTY5NCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTU4N3ptLTc4MDMgMTA3NzRsMTM0NzQgMCAyIC0xMzQ3NiAtMTM0NzggMCAyIDEzNDc2eiIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjcxMjksNjg2MSA2NTczLDgxMzMgNjE0MSw2OTM4IDU0NDYsNjk2OSA2MTM2LDg3MTAgNTM1OSwxMDQxMyA2MDQyLDEwNDY0IDY1OTAsOTIzOSA3MTAwLDEwNTM1IDc4ODYsMTA1NzggNzAzNCw4NzAzIDc4NDksNjgwOSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMjAxOSAxMzUxMywxMjAxOSAxMzUxMywxMDk1MyAxMTc1MywxMDk1MyAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMDYzMyAxMzUxMywxMDYzMyAxMzUxMyw5NTY2IDExNzUzLDk1NjYgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiAgPHBvbHlnb24gY2xhc3M9ImZpbDAiIHBvaW50cz0iMTE3NTMsOTI0NiAxMzUxMyw5MjQ2IDEzNTEzLDgxNzkgMTE3NTMsODE3OSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1Myw2NDczIDEzNTEzLDY0NzMgMTM1MTMsNTQwNiAxMTc1Myw1NDA2ICIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjExNzUzLDc4NTkgMTM1MTMsNzg1OSAxMzUxMyw2NzkzIDExNzUzLDY3OTMgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiA8L2c+DQoNCgk8bWV0YWRhdGE+DQoJCTxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6cmRmcz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8wMS9yZGYtc2NoZW1hIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4NCgkJCTxyZGY6RGVzY3JpcHRpb24gYWJvdXQ9Imh0dHBzOi8vaWNvbnNjb3V0LmNvbS9sZWdhbCNsaWNlbnNlcyIgZGM6dGl0bGU9Im1pY3Jvc29mdF9vZmZpY2VfZXhjZWwiIGRjOmRlc2NyaXB0aW9uPSJtaWNyb3NvZnRfb2ZmaWNlX2V4Y2VsIiBkYzpwdWJsaXNoZXI9Ikljb25zY291dCIgZGM6ZGF0ZT0iMjAxNy0wNC0yMSIgZGM6Zm9ybWF0PSJpbWFnZS9zdmcreG1sIiBkYzpsYW5ndWFnZT0iZW4iPg0KCQkJCTxkYzpjcmVhdG9yPg0KCQkJCQk8cmRmOkJhZz4NCgkJCQkJCTxyZGY6bGk+QWxleGFuZGVyIFBhbmFzb3Zza3k8L3JkZjpsaT4NCgkJCQkJPC9yZGY6QmFnPg0KCQkJCTwvZGM6Y3JlYXRvcj4NCgkJCTwvcmRmOkRlc2NyaXB0aW9uPg0KCQk8L3JkZjpSREY+DQogICAgPC9tZXRhZGF0YT48L3N2Zz4=",
-      "module": "addField",
+      "module": "removeField",
       "module_name": "PivotTableExcel",
       "visible": true,
       "options": false,
@@ -277,6 +469,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Name of the sheet where the pivot table is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -289,6 +485,10 @@
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
             },
             "id": "table",
             "css": "col-md-6"
@@ -303,18 +503,26 @@
               "es": "Nombre del filtro: ",
               "en": "Filter name: "
             },
+            "description": {
+              "es": "Nombre del campo que se quiere filtrar",
+              "en": "Name of the field to be filtered"
+            },
             "id": "filter",
             "css": "col-md-6"
           },
           {
             "type": "checkbox",
             "placeholder": {
-              "es": "",
-              "en": ""
+              "es": "True",
+              "en": "True"
             },
             "title": {
               "es": "Limpiar todos los filtros",
               "en": "Clear All Filters"
+            },
+            "description": {
+              "es": "Si se selecciona, se limpiarán todos los filtros de la tabla dinámica",
+              "en": "If selected, all filters of the pivot table will be cleared"
             },
             "id": "clean",
             "css": "col-md-6"
@@ -328,6 +536,10 @@
             "title": {
               "es": "Valor(es) del filtro a marcar: ",
               "en": "Filter(s) name to check: "
+            },
+            "description": {
+              "es": "Nombre del valor del filtro que se quiere marcar",
+              "en": "Name of the filter value to be checked"
             },
             "help": {
               "es": "Valores separados por coma",
@@ -346,6 +558,10 @@
               "es": "Valor(es) del filtro a desmarcar: ",
               "en": "Filter(s) name to uncheck: "
             },
+            "description": {
+              "es": "Nombre del valor del filtro que se quiere desmarcar",
+              "en": "Name of the filter value to be unchecked"
+            },
             "help": {
               "es": "Valores separados por coma",
               "en": "Comma separated value"
@@ -358,6 +574,183 @@
       "video_youtube": "",
       "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNzYuMzg5bW0iIGhlaWdodD0iMTc2LjM4OW1tIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIgdmlld0JveD0iMCAwIDE3NjM5IDE3NjM5Ij4NCiA8ZGVmcz4NCiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCiAgIDwhW0NEQVRBWw0KICAgIC5maWwwIHtmaWxsOiMxRTcxNDV9DQogICBdXT4NCiAgPC9zdHlsZT4NCiA8L2RlZnM+DQogPGcgaWQ9IkxheWVyX3gwMDIwXzEiPg0KICANCiAgPHBhdGggY2xhc3M9ImZpbDAiIGQ9Ik05NTk2IDM2MzRsMCAxMDI2NSAtNjEwMyAtMTA1OCAwIC04MTQ5IDYxMDMgLTEwNTh6bTI5MCAxMTg1bDQwNTMgMGMyMjQsMCAyNjcsNDQgMjY3LDI2N2wwIDczNjBjMCwyMjMgLTQzLDI2NyAtMjY3LDI2N2wtNDA1MyAwIDAgLTY5NCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTU4N3ptLTc4MDMgMTA3NzRsMTM0NzQgMCAyIC0xMzQ3NiAtMTM0NzggMCAyIDEzNDc2eiIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjcxMjksNjg2MSA2NTczLDgxMzMgNjE0MSw2OTM4IDU0NDYsNjk2OSA2MTM2LDg3MTAgNTM1OSwxMDQxMyA2MDQyLDEwNDY0IDY1OTAsOTIzOSA3MTAwLDEwNTM1IDc4ODYsMTA1NzggNzAzNCw4NzAzIDc4NDksNjgwOSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMjAxOSAxMzUxMywxMjAxOSAxMzUxMywxMDk1MyAxMTc1MywxMDk1MyAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMDYzMyAxMzUxMywxMDYzMyAxMzUxMyw5NTY2IDExNzUzLDk1NjYgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiAgPHBvbHlnb24gY2xhc3M9ImZpbDAiIHBvaW50cz0iMTE3NTMsOTI0NiAxMzUxMyw5MjQ2IDEzNTEzLDgxNzkgMTE3NTMsODE3OSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1Myw2NDczIDEzNTEzLDY0NzMgMTM1MTMsNTQwNiAxMTc1Myw1NDA2ICIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjExNzUzLDc4NTkgMTM1MTMsNzg1OSAxMzUxMyw2NzkzIDExNzUzLDY3OTMgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiA8L2c+DQoNCgk8bWV0YWRhdGE+DQoJCTxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6cmRmcz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8wMS9yZGYtc2NoZW1hIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4NCgkJCTxyZGY6RGVzY3JpcHRpb24gYWJvdXQ9Imh0dHBzOi8vaWNvbnNjb3V0LmNvbS9sZWdhbCNsaWNlbnNlcyIgZGM6dGl0bGU9Im1pY3Jvc29mdF9vZmZpY2VfZXhjZWwiIGRjOmRlc2NyaXB0aW9uPSJtaWNyb3NvZnRfb2ZmaWNlX2V4Y2VsIiBkYzpwdWJsaXNoZXI9Ikljb25zY291dCIgZGM6ZGF0ZT0iMjAxNy0wNC0yMSIgZGM6Zm9ybWF0PSJpbWFnZS9zdmcreG1sIiBkYzpsYW5ndWFnZT0iZW4iPg0KCQkJCTxkYzpjcmVhdG9yPg0KCQkJCQk8cmRmOkJhZz4NCgkJCQkJCTxyZGY6bGk+QWxleGFuZGVyIFBhbmFzb3Zza3k8L3JkZjpsaT4NCgkJCQkJPC9yZGY6QmFnPg0KCQkJCTwvZGM6Y3JlYXRvcj4NCgkJCTwvcmRmOkRlc2NyaXB0aW9uPg0KCQk8L3JkZjpSREY+DQogICAgPC9tZXRhZGF0YT48L3N2Zz4=",
       "module": "filter",
+      "module_name": "PivotTableExcel",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Filter Values",
+        "description": "Filter a pivot table values",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Filtrar Valores",
+        "description": "Filtra valores de una tabla dinámica",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Hoja 1",
+              "en": "Sheet1"
+            },
+            "title": {
+              "es": "Hoja: ",
+              "en": "Sheet: "
+            },
+            "id": "sheet",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Nombre: ",
+              "en": "Name: "
+            },
+            "title": {
+              "es": "Nombre de la tabla dinámica: ",
+              "en": "Pivot table name: "
+            },
+            "id": "table",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Campo base: ",
+              "en": "Base field: "
+            },
+            "title": {
+              "es": "Nombre del campo base: ",
+              "en": "Base field name: "
+            },
+            "help": {
+              "es": "Nombre de columna del tablero de origen de datos.",
+              "en": "Data Source Dashboard Column Name."
+            },
+            "id": "filter",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Campo: ",
+              "en": "Field: "
+            },
+            "title": {
+              "es": "Campo al cual aplicar el filtro.",
+              "en": "Field to apply the filter to."
+            },
+            "help": {
+              "es": "Nombre de columna con los valores a filtrar.",
+              "en": "Column name with the values to filter."
+            },
+            "id": "field",
+            "css": "col-md-6"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "",
+              "en": ""
+            },
+            "title": {
+              "es": "Limpiar todos los filtros",
+              "en": "Clear All Filters"
+            },
+            "id": "clean",
+            "css": "col-md-6"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "xlValueEquals",
+              "en": "xlValueEquals",
+              "pr": "xlValueEquals"
+            },
+            "title": {
+              "es": "Seleccione filtro: ",
+              "en": "Select filter: "
+            },
+            "options": [
+              {
+                "title": "---- Select filter ----",
+                "value": ""
+              },
+              {
+                "title": "xlValueEquals",
+                "value": "7"
+              },
+              {
+                "title": "xlValueDoesNotEqual",
+                "value": "8"
+              },
+              {
+                "title": "xlValueIsGreaterThan",
+                "value": "9"
+              },
+              {
+                "title": "xlValueIsGreaterThanOrEqualTo",
+                "value": "10"
+              },
+              {
+                "title": "xlValueIsLessThan",
+                "value": "11"
+              },
+              {
+                "title": "xlValueIsLessThanOrEqualTo",
+                "value": "12"
+              },
+              {
+                "title": "xlValueIsBetween",
+                "value": "13"
+              },
+              {
+                "title": "xlValueIsNotBetween",
+                "value": "14"
+              }
+            ],
+            "description": {
+              "es": "Tipo de filtro a aplicar.",
+              "en": "Type of filter to apply."
+            },
+            "id": "filter_type",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Name: ",
+              "en": "Name: "
+            },
+            "title": {
+              "es": "Valor(es) del filtro a marcar: ",
+              "en": "Filter(s) name to check: "
+            },
+            "help": {
+              "es": "Valor a filtrar. Para xlValueIsBetween y xlValueIsNotBetween colocar [valor1, valor2].",
+              "en": "Value to filter. For xlValueIsBetween and xlValueIsNotBetween place [value1, value2]."
+            },
+            "id": "value",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNzYuMzg5bW0iIGhlaWdodD0iMTc2LjM4OW1tIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIgdmlld0JveD0iMCAwIDE3NjM5IDE3NjM5Ij4NCiA8ZGVmcz4NCiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCiAgIDwhW0NEQVRBWw0KICAgIC5maWwwIHtmaWxsOiMxRTcxNDV9DQogICBdXT4NCiAgPC9zdHlsZT4NCiA8L2RlZnM+DQogPGcgaWQ9IkxheWVyX3gwMDIwXzEiPg0KICANCiAgPHBhdGggY2xhc3M9ImZpbDAiIGQ9Ik05NTk2IDM2MzRsMCAxMDI2NSAtNjEwMyAtMTA1OCAwIC04MTQ5IDYxMDMgLTEwNTh6bTI5MCAxMTg1bDQwNTMgMGMyMjQsMCAyNjcsNDQgMjY3LDI2N2wwIDczNjBjMCwyMjMgLTQzLDI2NyAtMjY3LDI2N2wtNDA1MyAwIDAgLTY5NCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NiAtMTU0NyAwIDAgLTMyMCAxNTQ3IDAgMCAtMTA2NyAtMTU0NyAwIDAgLTU4N3ptLTc4MDMgMTA3NzRsMTM0NzQgMCAyIC0xMzQ3NiAtMTM0NzggMCAyIDEzNDc2eiIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjcxMjksNjg2MSA2NTczLDgxMzMgNjE0MSw2OTM4IDU0NDYsNjk2OSA2MTM2LDg3MTAgNTM1OSwxMDQxMyA2MDQyLDEwNDY0IDY1OTAsOTIzOSA3MTAwLDEwNTM1IDc4ODYsMTA1NzggNzAzNCw4NzAzIDc4NDksNjgwOSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMjAxOSAxMzUxMywxMjAxOSAxMzUxMywxMDk1MyAxMTc1MywxMDk1MyAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1MywxMDYzMyAxMzUxMywxMDYzMyAxMzUxMyw5NTY2IDExNzUzLDk1NjYgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiAgPHBvbHlnb24gY2xhc3M9ImZpbDAiIHBvaW50cz0iMTE3NTMsOTI0NiAxMzUxMyw5MjQ2IDEzNTEzLDgxNzkgMTE3NTMsODE3OSAiIHN0eWxlPSJmaWxsOiAjMUU3MTQ1OyIvPg0KICA8cG9seWdvbiBjbGFzcz0iZmlsMCIgcG9pbnRzPSIxMTc1Myw2NDczIDEzNTEzLDY0NzMgMTM1MTMsNTQwNiAxMTc1Myw1NDA2ICIgc3R5bGU9ImZpbGw6ICMxRTcxNDU7Ii8+DQogIDxwb2x5Z29uIGNsYXNzPSJmaWwwIiBwb2ludHM9IjExNzUzLDc4NTkgMTM1MTMsNzg1OSAxMzUxMyw2NzkzIDExNzUzLDY3OTMgIiBzdHlsZT0iZmlsbDogIzFFNzE0NTsiLz4NCiA8L2c+DQoNCgk8bWV0YWRhdGE+DQoJCTxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6cmRmcz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8wMS9yZGYtc2NoZW1hIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4NCgkJCTxyZGY6RGVzY3JpcHRpb24gYWJvdXQ9Imh0dHBzOi8vaWNvbnNjb3V0LmNvbS9sZWdhbCNsaWNlbnNlcyIgZGM6dGl0bGU9Im1pY3Jvc29mdF9vZmZpY2VfZXhjZWwiIGRjOmRlc2NyaXB0aW9uPSJtaWNyb3NvZnRfb2ZmaWNlX2V4Y2VsIiBkYzpwdWJsaXNoZXI9Ikljb25zY291dCIgZGM6ZGF0ZT0iMjAxNy0wNC0yMSIgZGM6Zm9ybWF0PSJpbWFnZS9zdmcreG1sIiBkYzpsYW5ndWFnZT0iZW4iPg0KCQkJCTxkYzpjcmVhdG9yPg0KCQkJCQk8cmRmOkJhZz4NCgkJCQkJCTxyZGY6bGk+QWxleGFuZGVyIFBhbmFzb3Zza3k8L3JkZjpsaT4NCgkJCQkJPC9yZGY6QmFnPg0KCQkJCTwvZGM6Y3JlYXRvcj4NCgkJCTwvcmRmOkRlc2NyaXB0aW9uPg0KCQk8L3JkZjpSREY+DQogICAgPC9tZXRhZGF0YT48L3N2Zz4=",
+      "module": "filter_value",
       "module_name": "PivotTableExcel",
       "visible": true,
       "options": false,
@@ -394,6 +787,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Sheet name where the pivot table is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -407,6 +804,10 @@
               "es": "Nombre de la tabla dinámica: ",
               "en": "pivot table name: "
             },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
+            },
             "id": "table",
             "css": "col-md-6"
           },
@@ -419,6 +820,10 @@
             "title": {
               "es": "Asignar resultado a variable",
               "en": "Assign result to variable: "
+            },
+            "description": {
+              "es": "Nombre de la variable donde se almacenará el resultado",
+              "en": "Variable name where the result will be stored"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
@@ -445,7 +850,7 @@
     {
       "en": {
         "title": "Change pivot table data",
-        "description": "Change data range of Pivot Table",
+        "description": "Change the source data range of a pivot table",
         "title_options": null,
         "options": null
       },
@@ -468,6 +873,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra la tabla dinámica",
+              "en": "Name of the sheet where the pivot table is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -481,18 +890,26 @@
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
             },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
+            },
             "id": "table",
             "css": "col-md-6"
           },
           {
             "type": "input",
             "placeholder": {
-              "es": "A1:R200",
-              "en": "A1:R200"
+              "es": "Sheet1!A1:R200",
+              "en": "Sheet1!A1:R200"
             },
             "title": {
               "es": "Nuevo Rango",
               "en": "New Range: "
+            },
+            "description": {
+              "es": "Rango de datos de la tabla dinámica",
+              "en": "Pivot table data range"
             },
             "id": "range",
             "css": "col-md-12"
@@ -538,6 +955,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja",
+              "en": "Sheet name"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -550,6 +971,10 @@
             "title": {
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica",
+              "en": "Pivot table name"
             },
             "id": "table",
             "css": "col-md-6"
@@ -564,6 +989,10 @@
               "es": "Nombre del filtro: ",
               "en": "Filter name: "
             },
+            "description": {
+              "es": "Nombre del filtro",
+              "en": "Filter name"
+            },
             "id": "filter",
             "css": "col-md-12"
           },
@@ -576,6 +1005,10 @@
             "title": {
               "es": "Asignar resultado a variable",
               "en": "Assign result to variable: "
+            },
+            "description": {
+              "es": "Nombre de la variable donde se almacenará el resultado",
+              "en": "Variable name to store the result"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
@@ -612,7 +1045,7 @@
         "title_options": null,
         "options": null
       },
-      "pt": {
+      "pr": {
         "title": "Inserir linha do tempo",
         "description": "Este comando cria uma nova linha do tempo",
         "title_options": null,
@@ -625,13 +1058,18 @@
             "type": "input",
             "placeholder": {
               "es": "Hoja 1",
-              "pt": "Hoja 1",
+              "pr": "Hoja 1",
               "en": "Plan1"
             },
             "title": {
               "es": "Hoja: ",
               "en": "Sheet: ",
-              "pt": "Planilha"
+              "pr": "Planilha"
+            },
+            "description": {
+              "es": "Nombre de la hoja donde se insertará la línea de tiempo",
+              "en": "Name of the sheet where the timeline will be inserted",
+              "pr": "Nome da planilha onde a linha do tempo será inserida"
             },
             "id": "sheet",
             "css": "col-md-6"
@@ -640,13 +1078,18 @@
             "type": "input",
             "placeholder": {
               "es": "TablaDinámica1: ",
-              "pt": "TabelaDinâmica1: ",
+              "pr": "TabelaDinâmica1: ",
               "en": "PivotTable1: "
             },
             "title": {
               "es": "Nombre de la tabla dinámica: ",
-              "pt": "Nome do tabela dinâmica: ",
+              "pr": "Nome do tabela dinâmica: ",
               "en": "Pivote table name: "
+            },
+            "description": {
+              "es": "Nombre de la tabla dinámica que se usará para crear la línea de tiempo",
+              "pr": "Nome da tabela dinâmica que será usada para criar a linha do tempo",
+              "en": "Name of the pivot table that will be used to create the timeline"
             },
             "id": "table",
             "css": "col-md-6"
@@ -655,13 +1098,18 @@
             "type": "input",
             "placeholder": {
               "es": "Campo ",
-              "pt": "Campo ",
+              "pr": "Campo ",
               "en": "Field "
             },
             "title": {
               "es": "Campo de la tabla dinámica: ",
-              "pt": "Campo do tabela dinâmica: ",
+              "pr": "Campo do tabela dinâmica: ",
               "en": "Pivot table field: "
+            },
+            "description": {
+              "es": "Nombre del campo de la tabla dinámica que se usará para crear la línea de tiempo",
+              "pr": "Nome do campo do tabela dinâmica que será usado para criar a linha do tempo",
+              "en": "Name of the pivot table field that will be used to create the timeline"
             },
             "id": "field",
             "css": "col-md-6"
@@ -670,13 +1118,18 @@
             "type": "input",
             "placeholder": {
               "es": "A1:D20",
-              "pt": "A1:D20",
+              "pr": "A1:D20",
               "en": "A1:D20"
             },
             "title": {
               "es": "Rango donde posicionar",
-              "pt": "Interválo onde posicionar",
+              "pr": "Interválo onde posicionar",
               "en": "Position range: "
+            },
+            "description": {
+              "es": "Rango donde se insertará la línea de tiempo",
+              "pr": "Interválo onde a linha do tempo será inserida",
+              "en": "Range where the timeline will be inserted"
             },
             "id": "range",
             "css": "col-md-6"
@@ -722,6 +1175,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra el slider",
+              "en": "Name of the sheet where the slider is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -734,6 +1191,10 @@
             "title": {
               "es": "Nombre del slider: ",
               "en": "Slider name: "
+            },
+            "description": {
+              "es": "Nombre del slider",
+              "en": "Slider name"
             },
             "id": "name",
             "css": "col-md-6"
@@ -748,6 +1209,10 @@
               "es": "Fecha de incio",
               "en": "Start date"
             },
+            "description": {
+              "es": "Fecha de inicio del filtro",
+              "en": "Start date of the filter"
+            },
             "id": "start",
             "css": "col-md-6"
           },
@@ -760,6 +1225,10 @@
             "title": {
               "es": "Fecha final",
               "en": "End date"
+            },
+            "description": {
+              "es": "Fecha final del filtro",
+              "en": "End date of the filter"
             },
             "id": "end",
             "css": "col-md-6"
@@ -782,13 +1251,13 @@
     {
       "en": {
         "title": "Filter status",
-        "description": "Returns True if the filter is checked",
+        "description": "Checks whether the element is marked in the field filter as visible or not visible. Return True or False respectively.",
         "title_options": null,
         "options": null
       },
       "es": {
         "title": "Estado de filtro",
-        "description": "Retorna True si el filtro está marcadoa",
+        "description": "Comprueba si el elemento está marcado en el filtro de campo como visible o no visible. Retornar True o Falso respectivamente.",
         "title_options": null,
         "options": null
       },
@@ -811,6 +1280,10 @@
               "es": "Hoja: ",
               "en": "Sheet: "
             },
+            "description": {
+              "es": "Nombre de la hoja donde se encuentra el filtro",
+              "en": "Sheet name where the filter is located"
+            },
             "id": "sheet",
             "css": "col-md-6"
           },
@@ -824,6 +1297,10 @@
               "es": "Nombre de la tabla dinámica: ",
               "en": "Pivot table name: "
             },
+            "description": {
+              "es": "Nombre de la tabla dinámica donde se encuentra el filtro",
+              "en": "Pivot table name where the filter is located"
+            },
             "id": "table",
             "css": "col-md-6"
           },
@@ -834,8 +1311,12 @@
               "en": "Field "
             },
             "title": {
-              "es": "Nombre del filtro: ",
-              "en": "Filter name: "
+              "es": "Nombre del campo: ",
+              "en": "Field name: "
+            },
+            "description": {
+              "es": "Nombre del filtro que se desea consultar",
+              "en": "Filter name to be consulted"
             },
             "id": "filter",
             "css": "col-md-6"
@@ -843,13 +1324,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Name: ",
-              "en": "Name: "
+              "es": "Valor: ",
+              "en": "Value: "
             },
             "title": {
-              "es": "Nombre del filtro ",
-              "en": "Filter Name ",
-              "pr": "Nome do filtro"
+              "es": "Elemento del filtro a controlar",
+              "en": "Filter element to check"
+            },
+            "description": {
+              "es": "Valor del filtro de campo que se desea comprobar",
+              "en": "Field filter value to be checked"
             },
             "id": "value",
             "css": "col-md-6"
@@ -912,6 +1396,10 @@
                 "es": "Hoja: ",
                 "en": "Sheet: "
               },
+              "description": {
+                "es": "Nombre de la hoja donde se encuentra la tabla dinamica.",
+                "en": "Name of the sheet where the pivot table is located."
+              },
               "id": "sheet",
               "css": "col-md-6"
             },
@@ -925,6 +1413,10 @@
                 "es": "Nombre de la tabla: ",
                 "en": "Table name: "
               },
+            "description": {
+                "es": "Nombre de la tabla dinamica.",
+                "en": "Name of the pivot table."
+            },
               "id": "table",
               "css": "col-md-6"
             },
@@ -938,6 +1430,10 @@
                 "es": "Campos de la tabla",
                 "en": "Pivot fields"
               },
+            "description": {
+                "es": "Campos de la tabla dinamica.",
+                "en": "Pivot table fields."
+            },
               "id": "fields",
               "css": "col-md-6"
             }
@@ -982,6 +1478,10 @@
                 "es": "Hoja: ",
                 "en": "Sheet: "
               },
+              "description": {
+                "es": "Nombre de la hoja donde se encuentra la tabla dinamica.",
+                "en": "Name of the sheet where the pivot table is located."
+              },
               "id": "sheet",
               "css": "col-md-6"
             },
@@ -995,6 +1495,10 @@
                 "es": "Nombre de la tabla: ",
                 "en": "Table name: "
               },
+                "description": {
+                    "es": "Nombre de la tabla dinamica.",
+                    "en": "Name of the pivot table."
+                },
               "id": "table",
               "css": "col-md-6"
             },
@@ -1008,6 +1512,10 @@
                 "es": "Campos de la tabla",
                 "en": "Pivot fields"
               },
+                "description": {
+                    "es": "Campos de la tabla dinamica.",
+                    "en": "Pivot table fields."
+                },
               "id": "fields",
               "css": "col-md-6"
             }
@@ -1028,8 +1536,8 @@
     },
     {
         "en": {
-          "title": "Repets label",
-          "description": "Allows to the pivot table to repet labels.",
+          "title": "Repeat label",
+          "description": "Allows to the pivot table to repeat labels.",
           "title_options": null,
           "options": null
         },
@@ -1052,6 +1560,10 @@
                 "es": "Hoja: ",
                 "en": "Sheet: "
               },
+              "description": {
+                "es": "Nombre de la hoja donde se encuentra la tabla dinamica.",
+                "en": "Name of the sheet where the pivot table is located."
+              },
               "id": "sheet",
               "css": "col-md-6"
             },
@@ -1065,6 +1577,10 @@
                 "es": "Nombre de la tabla: ",
                 "en": "Table name: "
               },
+                "description": {
+                    "es": "Nombre de la tabla dinamica.",
+                    "en": "Name of the pivot table."
+                },
               "id": "table",
               "css": "col-md-6"
             },
@@ -1078,6 +1594,10 @@
                 "es": "Campos de la tabla",
                 "en": "Pivot fields"
               },
+                "description": {
+                    "es": "Campos de la tabla dinamica que se repetiran.",
+                    "en": "Pivot table fields that will be repeated."
+                },
               "id": "fields",
               "css": "col-md-6"
             }
