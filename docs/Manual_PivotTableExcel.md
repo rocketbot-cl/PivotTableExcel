@@ -1,3 +1,7 @@
+
+
+
+
 # Pivot tables
   
 Module to work and interact with Pivot Tables from Microsoft Excel. 
@@ -162,4 +166,3 @@ Allows to the pivot table to repet labels.
 |Sheet ||Sheet1|
 |Table name ||Name: |
 |Pivot fields||['Number', 'Date', 'Hours']: |
-
