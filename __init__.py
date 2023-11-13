@@ -41,7 +41,7 @@ cur_path_x86 = os.path.join(cur_path, 'Windows' + os.sep +  'x86' + os.sep)
 
 if sys.maxsize > 2**32 and cur_path_x64 not in sys.path:
         sys.path.append(cur_path_x64)
-if sys.maxsize > 32 and cur_path_x86 not in sys.path:
+if sys.maxsize <= 2**32 and cur_path_x86 not in sys.path:
         sys.path.append(cur_path_x86)
 
 global ascii_letters
@@ -71,6 +71,9 @@ module = GetParams("module")
 
 try:
     if module == "createPivotTable":
+        from openpyxl.utils import column_index_from_string
+        import re
+        
         data = GetParams("data")
         destination = GetParams("destination")
         table_name = GetParams("tableName")
@@ -82,12 +85,14 @@ try:
         data = data.replace('$', '').split("!")
         destination = destination.replace('$', '').split("!")
         sheet_1, sheet_2 = None, None
+        
         if len(data) > 1:
             sheet = data[0]
-            range_ = data[1].split(":")
+            data = data[1]
         else:
             sheet = 1
-            range_ = data[0].split(":")
+            data = data[0]
+            
         sheet_1 = wb.api.Worksheets(sheet)
         if len(destination) > 1:
             pivot_sheet = destination[0]
@@ -96,27 +101,16 @@ try:
                 sheet_2 = wb.api.Worksheets(destination[0])
         else:
             cell = destination[0]
-
-        cell_1 = wb.sheets[data[0]].range(data[1].split(":")[0]).row, wb.sheets[data[0]].range(data[1].split(":")[0]).column
-        cell_2 = wb.sheets[data[0]].range(data[1].split(":")[1]).row, wb.sheets[data[0]].range(data[1].split(":")[1]).column
-        cell_3 = abc.index(cell[0].lower()) + 1, int(cell[1])
-
-        print(cell_1, cell_2)
-        cell_1 = sheet_1.Cells(cell_1[0], cell_1[1])
-        cell_2 = sheet_1.Cells(cell_2[0], cell_2[1])
-
-        source_range = sheet_1.Range(cell_1, cell_2)
+            
+        source_range = sheet_1.Range(data)
 
         if sheet_2:
-            cell_3 = sheet_2.Cells(cell_3[1],cell_3[0])
-            pivotTargetRange = sheet_2.Range(cell_3, cell_3)
+            pivotTargetRange = sheet_2.Range(cell)
         else:
-            cell_3 = sheet_1.Cells(cell_3[1],cell_3[0])
-            pivotTargetRange = sheet_1.Range(cell_3, cell_3)
+            pivotTargetRange = sheet_1.Range(cell)
 
         pivot_table = wb.api.PivotCaches().Create(SourceType=1, SourceData=source_range)
         pivot_table.CreatePivotTable(TableDestination=pivotTargetRange, TableName=table_name)
-
 
     if module == "refreshPivot":
         sheet = GetParams("sheet")
@@ -291,7 +285,10 @@ try:
         xls = excel.file_[excel.actual_id]
 
         wb = xls['workbook']
-        sht = wb.sheets[sheet].select()
+        try:
+            sht = wb.sheets[sheet].select()
+        except:
+            pass
 
         pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
 
@@ -333,12 +330,14 @@ try:
         xls = excel.file_[excel.actual_id]
 
         wb = xls['workbook']
-        sht = wb.sheets[sheet].select()
-
-        pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
+        try:
+            sht = wb.sheets[sheet].select()
+        except:
+            pass
+        
+        pivotTable = wb.sheets[sheet].api.PivotTables(pivotTableName)
         filter_ = pivotTable.PivotFields(data)
         # filter_.CurrentPage = "(All)"
-
         items = [item.Name for item in filter_.PivotItems()]
         if result:
             SetVar(result, items)
@@ -421,7 +420,10 @@ End Sub"""
 
         xls = excel.file_[excel.actual_id]
         wb = xls['workbook']
-        sht = wb.sheets[sheet].select()
+        try:
+            sht = wb.sheets[sheet].select()
+        except:
+            pass
 
         pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
         filter_ = pivotTable.PivotFields(data)
