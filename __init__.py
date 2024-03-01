@@ -216,8 +216,11 @@ try:
             check = eval(check) if check.startswith("[") else check.split(",")
 
             for item in check:
-                filter_.PivotItems(item).Visible = True
-
+                try:
+                    filter_.PivotItems(item).Visible = True
+                except:
+                    pass
+                
             if not no_check:
                 for item in filter_.PivotItems():
                     if item.Name not in check:
@@ -232,7 +235,10 @@ try:
                         filter_.PivotItems(item.Name).Visible = True
             
             for item in no_check:
-                filter_.PivotItems(item).Visible = False
+                try:
+                    filter_.PivotItems(item).Visible = False
+                except:
+                    pass
     
     if module == "filter_value":
 
@@ -306,17 +312,16 @@ try:
         xls = excel.file_[excel.actual_id]
         wb = xls['workbook']
         sh = wb.sheets[sheet]
-        sh.select()
 
-        range_ = range_.replace('$', '')
+        # range_ = range_.replace('$', '')
+        # if "!" in range_:
+        #     sheet_, range__ = range_.split("!")
+        #     source_range = wb.sheets[sheet_].api.Range(range__).Address
+        # else:
+        # source_range = sh.api.Range(range_)
         
-        if "!" in range_:
-            sheet, range_ = range_.split("!")
-            source_range = wb.sheets[sheet].api.Range(range_)
-        else:
-            source_range = sh.api.Range(range_)
-        pivot = wb.api.ActiveSheet.PivotTables(pivotTableName)
-        pivot_table = wb.api.PivotCaches().Create(SourceType=1, SourceData=source_range, Version=5)
+        pivot = sh.api.PivotTables(pivotTableName)
+        pivot_table = wb.api.PivotCaches().Create(SourceType=1, SourceData=range_, Version=5)
         pivot.ChangePivotCache(pivot_table)
 
 
