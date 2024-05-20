@@ -512,6 +512,35 @@ End Sub"""
                     if each.Name == cada:
                         each.RepeatLabels = True
 
+    if module == "ungroup":
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        field = GetParams("field")
+        item_ = GetParams("item")
+        try:
+            xls = excel.file_[excel.actual_id]
+
+            wb = xls['workbook']
+            try:
+                sht = wb.sheets[sheet].select()
+            except:
+                pass
+
+            pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
+            campo = pivotTable.PivotFields(field)
+           
+            for i in range(1, campo.PivotItems().Count + 1):
+                item_name = campo.PivotItems(i).Name
+                if item_name == item_:
+                    campo.PivotItems(i).ShowDetail = True
+                    break  
+                
+        except Exception as e:
+            traceback.print_exc()
+            print("\x1B[" + "31;40mError\x1B[" + "0m")
+            PrintException()
+            raise e
+        
 except Exception as e:
     traceback.print_exc()
     print("\x1B[" + "31;40mError\x1B[" + "0m")

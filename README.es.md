@@ -4,14 +4,14 @@
 
 # Tablas dinámicas
   
-Módulo para trabajar e interactuar con Tablas Dinámicas de Microsoft Excel. 
+Modulo para trabajar e interactuar con tablas dinamicas de Microsoft Excel.  
+
 
 ## Como instalar este módulo
   
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
-2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.
-
+2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
 
 
 ## Overview
@@ -51,7 +51,7 @@ Crea una nueva línea de tiempo
 Modifica el filtro de un slider
 
 12. Estado de filtro  
-Retorna True si el filtro está marcadoa
+Comprueba si el elemento está marcado en el filtro de campo como visible o no visible. Retornar True o Falso respectivamente.
 
 13. Cambiar tabla a formato tabular  
 Altera los campos de la tabla dinamica a formato tabular.
@@ -60,7 +60,10 @@ Altera los campos de la tabla dinamica a formato tabular.
 Elimina los subtotales de la tabla dinamica.
 
 15. Repetir etiquetas de elementos  
-Permite a la tabla dinamica repetir etiquetas.  
+Permite a la tabla dinamica repetir etiquetas.
+
+16. Desagrupar campo  
+Desagrupa el campo indicado  
 
 
 

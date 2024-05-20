@@ -1,15 +1,17 @@
-# Pivot tables
 
-*Read this in other languages: [English](README.md), [Español](README.es.md).*
+
+
+
+# Pivot tables
   
-Module to work and interact with Pivot Tables from Microsoft Excel.
+Module to work and interact with Pivot Tables from Microsoft Excel.  
+
 
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:
 1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
-2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.
-
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
 
 
 ## Overview
@@ -37,7 +39,7 @@ Filter a pivot table values
 List all available table fields
 
 8. Change pivot table data  
-Change data range of Pivot Table
+Change the source data range of a pivot table
 
 9. List Filter Items   
 Return all items from filter
@@ -49,7 +51,7 @@ Create a new timeline.
 Sets the timeline's filter.
 
 12. Filter status  
-Returns True if the filter is checked
+Checks whether the element is marked in the field filter as visible or not visible. Return True or False respectively.
 
 13. Change table format to tabular  
 Changes the field of the pivot table to tabular format.
@@ -57,8 +59,13 @@ Changes the field of the pivot table to tabular format.
 14. Delete subtotals  
 Erase the subtotals from the pivot table.
 
-15. Repeats label  
-Allows to the pivot table to repeat labels.  
+15. Repeat label  
+Allows to the pivot table to repeat labels.
+
+16. Ungroup item  
+Ungroups the item indicated  
+
+
 
 
 ----
