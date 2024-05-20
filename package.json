@@ -1678,8 +1678,8 @@
               "en": "Month"
             },
             "title": {
-              "es": "Campo en la que se encuentra el item a desagrupar.",
-              "en": "Field in which the item to ungroup is located."
+              "es": "Campo: ",
+              "en": "Field: "
             },
             "help": {
               "es": "Puede sacar el nombre del campo con el comando Listar Campos.",
