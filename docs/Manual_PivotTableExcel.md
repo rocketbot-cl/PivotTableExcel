@@ -5,7 +5,6 @@
 # Pivot tables
   
 Module to work and interact with Pivot Tables from Microsoft Excel.  
-
 ![banner](imgs/Banner_PivotTableExcel.png)
 
 ## How to install this module

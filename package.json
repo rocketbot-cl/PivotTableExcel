@@ -1629,8 +1629,8 @@
         "options": null
       },
       "es": {
-        "title": "Desagrupar campo",
-        "description": "Desagrupa el campo indicado",
+        "title": "Desagrupar item",
+        "description": "Desagrupa el item indicado",
         "title_options": null,
         "options": null
       },

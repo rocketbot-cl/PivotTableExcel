@@ -6,7 +6,6 @@
   
 Module to work and interact with Pivot Tables from Microsoft Excel.  
 
-
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:

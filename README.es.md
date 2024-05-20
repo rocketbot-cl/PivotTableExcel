@@ -62,8 +62,8 @@ Elimina los subtotales de la tabla dinamica.
 15. Repetir etiquetas de elementos  
 Permite a la tabla dinamica repetir etiquetas.
 
-16. Desagrupar campo  
-Desagrupa el campo indicado  
+16. Desagrupar item  
+Desagrupa el item indicado  
 
 
 
