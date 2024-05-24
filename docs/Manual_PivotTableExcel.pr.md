@@ -174,5 +174,5 @@ Retorna True se o filtro estiver marcado
 | --- | --- | --- |
 |Sheet |Excel Sheet name where the pivot table is located|Sheet1|
 |Pivot table name |Pivot table name|MyTable|
-|Field in which the item to ungroup is located.|Name of the field where the record to ungroup is located|Month|
-|Item to ungroup|Name of the item to ungroup as it appears in the List items command|January|
+|Field |Name of the field where the record to expand is located (Active Field)|Month|
+|Item to expand|Name of the item to expand as it appears in the List items command|January|

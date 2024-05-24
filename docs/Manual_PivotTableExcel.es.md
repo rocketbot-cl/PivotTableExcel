@@ -6,7 +6,9 @@
   
 Modulo para trabajar e interactuar con tablas dinamicas de Microsoft Excel.  
 
+  
 ![banner](imgs/Banner_PivotTableExcel.png)
+
 ## Como instalar este módulo
   
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
@@ -166,12 +168,12 @@ Permite a la tabla dinamica repetir etiquetas.
 |Nombre de la tabla |Nombre de la tabla dinamica.|Name: |
 |Campos de la tabla|Campos de la tabla dinamica que se repetiran.|['Numero', 'Fecha', 'Hora']|
 
-### Desagrupar item
+### Expandir registros
   
-Desagrupa el item indicado
+Expande todos los elementos del campo que esté contraído
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Hoja |Nombre de la hoja de Excel donde se encuentra la tabla dinámica|Hoja1|
 |Nombre de la tabla dinámica |Nombre asignado a la tabla dinámica|MiTabla|
-|Campo en la que se encuentra el item a desagrupar.|Nombre del campo donde se ubica el registro a desagrupar|Mes|
-|Item a desagrupar|Nombre del item a desagrupar tal cual figura en Listar items|Enero|
+|Campo |Nombre del campo donde se ubica el registro a expandir (Campo Activo)|Mes|
+|Item a expandir|Nombre del item a expandir tal cual figura en Listar items|Enero|

@@ -5,8 +5,8 @@
 # Pivot tables
   
 Module to work and interact with Pivot Tables from Microsoft Excel.  
-![banner](imgs/Banner_PivotTableExcel.png)
 
+![banner](imgs/Banner_PivotTableExcel.png)
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:
@@ -166,12 +166,12 @@ Allows to the pivot table to repeat labels.
 |Table name |Name of the pivot table.|Name: |
 |Pivot fields|Pivot table fields that will be repeated.|['Number', 'Date', 'Hours']: |
 
-### Ungroup item
+### Expand items
   
-Ungroups the item indicated
+Expand all items in the field that is collapsed
 |Parameters|Description|example|
 | --- | --- | --- |
 |Sheet |Excel Sheet name where the pivot table is located|Sheet1|
 |Pivot table name |Pivot table name|MyTable|
-|Field in which the item to ungroup is located.|Name of the field where the record to ungroup is located|Month|
-|Item to ungroup|Name of the item to ungroup as it appears in the List items command|January|
+|Field |Name of the field where the record to expand is located (Active Field)|Month|
+|Item to expand|Name of the item to expand as it appears in the List items command|January|
