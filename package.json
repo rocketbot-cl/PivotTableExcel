@@ -1623,14 +1623,14 @@
     },
     {
       "en": {
-        "title": "Ungroup item",
-        "description": "Ungroups the item indicated",
+        "title": "Expand items",
+        "description": "Expand all items in the field that is collapsed",
         "title_options": null,
         "options": null
       },
       "es": {
-        "title": "Desagrupar item",
-        "description": "Desagrupa el item indicado",
+        "title": "Expandir registros",
+        "description": "Expande todos los elementos del campo que esté contraído",
         "title_options": null,
         "options": null
       },
@@ -1686,8 +1686,8 @@
               "en": "You can get the field name with the List Fields command."
             },
             "description": {
-              "es": "Nombre del campo donde se ubica el registro a desagrupar",
-              "en": "Name of the field where the record to ungroup is located"
+              "es": "Nombre del campo donde se ubica el registro a expandir (Campo Activo)",
+              "en": "Name of the field where the record to expand is located (Active Field)"
             },
             "id": "field",
             "css": "col-md-6"
@@ -1699,16 +1699,16 @@
               "en": "January"
             },
             "title": {
-              "es": "Item a desagrupar:",
-              "en": "Item to ungroup:"
+              "es": "Item a expandir:",
+              "en": "Item to expand:"
             },
             "help": {
               "es": "Puede sacar el nombre del item con el comando Listar items de Filtro.",
               "en": "You can get the item name with the List items command."
             },
             "description": {
-              "es": "Nombre del item a desagrupar tal cual figura en Listar items",
-              "en": "Name of the item to ungroup as it appears in the List items command"
+              "es": "Nombre del item a expandir tal cual figura en Listar items",
+              "en": "Name of the item to expand as it appears in the List items command"
             },
             "id": "item",
             "css": "col-md-6"
