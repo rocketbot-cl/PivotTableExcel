@@ -515,7 +515,7 @@ End Sub"""
     if module == "ungroup":
         sheet = GetParams("sheet")
         pivotTableName = GetParams("table")
-        field = GetParams("field")
+        field_ = GetParams("field")
         item_ = GetParams("item")
         try:
             xls = excel.file_[excel.actual_id]
@@ -527,12 +527,12 @@ End Sub"""
                 pass
 
             pivotTable = wb.api.ActiveSheet.PivotTables(pivotTableName)
-            campo = pivotTable.PivotFields(field)
+            field = pivotTable.PivotFields(field_)
            
-            for i in range(1, campo.PivotItems().Count + 1):
-                item_name = campo.PivotItems(i).Name
+            for i in range(1, field.PivotItems().Count + 1):
+                item_name = field.PivotItems(i).Name
                 if item_name == item_:
-                    campo.PivotItems(i).ShowDetail = True
+                    field.PivotItems(i).ShowDetail = True
                     break  
                 
         except Exception as e:
