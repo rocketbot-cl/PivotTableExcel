@@ -834,6 +834,7 @@
               "es": "Nombre de variable sin llaves {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-12"
           }
@@ -1019,6 +1020,7 @@
               "es": "Nombre de variable sin llaves {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-12"
           }
@@ -1357,6 +1359,7 @@
               "es": "Nombre de variable sin llaves {}",
               "en": "Variable name without {}"
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-12"
           }          
@@ -1710,7 +1713,6 @@
               "es": "Nombre del item a expandir tal cual figura en Listar items",
               "en": "Name of the item to expand as it appears in the List items command"
             },
-            "remove_vars": true,
             "id": "item",
             "css": "col-md-6"
           }
