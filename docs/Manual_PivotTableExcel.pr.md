@@ -2,42 +2,43 @@
 
 
 
-# Pivot tables
+# Tabelas dinâmicas
   
-Module to work and interact with Pivot Tables from Microsoft Excel.  
+Modulo para trabalhar e interagir com tabelas dinâmicas do Microsoft Excel.  
 
 ![banner](imgs/Banner_PivotTableExcel.png)
-## How to install this module
+
+## Como instalar este módulo
   
-To install the module in Rocketbot Studio, it can be done in two ways:
-1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
-2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
+Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
+1. Manual: __Baixe__ o arquivo .zip e descompacte-o na pasta módulos. O nome da pasta deve ser o mesmo do módulo e dentro dela devem ter os seguintes arquivos e pastas: \__init__.py, package.json, docs, example e libs. Se você tiver o aplicativo aberto, atualize seu navegador para poder usar o novo módulo.
+2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.  
 
 
-## Description of the commands
+## Descrição do comando
 
-### Create
+### 
   
-Create a new pivot table
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Data range |Enter the data range you want to use to create the pivot table|Sheet1!B2:C4|
 |Destination Cell |Enter the cell where you want the pivot table to be created|Sheet2!C4|
 |Pivot table name |Enter the pivot table name|Name: |
 
-### Refresh
+### 
   
-Refresh a pivot table
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Name of the sheet where the pivot table is located|Sheet1|
 |Refresh all ||False|
 |Pivote table name |Name of the pivot table to update|Name: |
 
-### Add field
+### 
   
-Add field to a pivot table
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Name of the sheet where the pivot table is located|Sheet1|
 |Pivot table name |Pivot table name|Name: |
@@ -46,19 +47,19 @@ Add field to a pivot table
 |Select a function|||
 |Field name ||Sales Sum|
 
-### Remove field
+### 
   
-Remove a field from a pivot table
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet ||Sheet1|
 |Pivot table name ||Name: |
 |Field to remove |Name of the field to add|Field: |
 
-### Filter
+### 
   
-Filter a pivot table
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Name of the sheet where the pivot table is located|Sheet1|
 |Pivot table name |Pivot table name|Name: |
@@ -67,10 +68,10 @@ Filter a pivot table
 |Filter(s) name to check |Name of the filter value to be checked|Name: |
 |Filter(s) name to uncheck |Name of the filter value to be unchecked|Name: |
 
-### Filter Values
+### 
   
-Filter a pivot table values
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet ||Sheet1|
 |Pivot table name ||Name: |
@@ -80,58 +81,58 @@ Filter a pivot table values
 |Select filter |Type of filter to apply.|xlValueEquals|
 |Filter(s) name to check ||Name: |
 
-### List Fields
+### 
   
-List all available table fields
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Sheet name where the pivot table is located|Sheet1|
 |pivot table name |Pivot table name|Name: |
 |Assign result to variable |Variable name where the result will be stored|Variable|
 
-### Change pivot table data
+### 
   
-Change the source data range of a pivot table
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Name of the sheet where the pivot table is located|Sheet1|
 |Pivot table name |Pivot table name|Name: |
 |New Range |Pivot table data range|Sheet1!A1:R200|
 
-### List Filter Items 
+### 
   
-Return all items from filter
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Sheet name|Sheet1|
 |Pivot table name |Pivot table name|Name: |
 |Filter name |Filter name|Field |
 |Assign result to variable |Variable name to store the result|Variable|
 
-### Insert timeline
+### Inserir linha do tempo
   
-Create a new timeline.
-|Parameters|Description|example|
+Este comando cria uma nova linha do tempo
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-|Sheet |Name of the sheet where the timeline will be inserted|Plan1|
-|Pivote table name |Name of the pivot table that will be used to create the timeline|PivotTable1: |
-|Pivot table field |Name of the pivot table field that will be used to create the timeline|Field |
-|Position range |Range where the timeline will be inserted|A1:D20|
+|Planilha|Nome da planilha onde a linha do tempo será inserida|Hoja 1|
+|Nome do tabela dinâmica |Nome da tabela dinâmica que será usada para criar a linha do tempo|TabelaDinâmica1: |
+|Campo do tabela dinâmica |Nome do campo do tabela dinâmica que será usado para criar a linha do tempo|Campo |
+|Interválo onde posicionar|Interválo onde a linha do tempo será inserida|A1:D20|
 
-### Filter slider
+### 
   
-Sets the timeline's filter.
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Name of the sheet where the slider is located|Sheet1|
 |Slider name |Slider name|Name: |
 |Start date|Start date of the filter|13/12/1999: |
 |End date|End date of the filter|13/12/2000: |
 
-### Filter status
+### Status do filtro
   
-Checks whether the element is marked in the field filter as visible or not visible. Return True or False respectively.
-|Parameters|Description|example|
+Retorna True se o filtro estiver marcado
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Sheet name where the filter is located|Sheet1|
 |Pivot table name |Pivot table name where the filter is located|Name: |
@@ -139,37 +140,37 @@ Checks whether the element is marked in the field filter as visible or not visib
 |Filter element to check|Field filter value to be checked|Value: |
 |Assign result to variable ||Variable|
 
-### Change table format to tabular
+### 
   
-Changes the field of the pivot table to tabular format.
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Name of the sheet where the pivot table is located.|Sheet1|
 |Table name |Name of the pivot table.|Name: |
 |Pivot fields|Pivot table fields.|['Number', 'Date', 'Hours']: |
 
-### Delete subtotals
+### 
   
-Erase the subtotals from the pivot table.
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Name of the sheet where the pivot table is located.|Sheet1|
 |Table name |Name of the pivot table.|Name: |
 |Pivot fields|Pivot table fields.|['Number', 'Date', 'Hours']: |
 
-### Repeat label
+### 
   
-Allows to the pivot table to repeat labels.
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Name of the sheet where the pivot table is located.|Sheet1|
 |Table name |Name of the pivot table.|Name: |
 |Pivot fields|Pivot table fields that will be repeated.|['Number', 'Date', 'Hours']: |
 
-### Expand items
+### 
   
-Expand all items in the field that is collapsed
-|Parameters|Description|example|
+
+|Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Excel Sheet name where the pivot table is located|Sheet1|
 |Pivot table name |Pivot table name|MyTable|
