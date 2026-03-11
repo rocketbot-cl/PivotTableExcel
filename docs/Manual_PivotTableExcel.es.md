@@ -3,23 +3,23 @@
 
 
 # Tablas dinámicas
-  
-Modulo para trabajar e interactuar con tablas dinamicas de Microsoft Excel.  
 
-  
+Modulo para trabajar e interactuar con tablas dinamicas de Microsoft Excel.
+
+*Read this in other languages: [English](Manual_PivotTableExcel.md), [Português](Manual_PivotTableExcel.pr.md), [Español](Manual_PivotTableExcel.es.md)*
+
 ![banner](imgs/Banner_PivotTableExcel.png)
-
 ## Como instalar este módulo
-  
+
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
-2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
+2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.
 
 
 ## Descripción de los comandos
 
 ### Crear
-  
+
 Crea una nueva tabla dinámica
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -28,7 +28,7 @@ Crea una nueva tabla dinámica
 |Nombre de la tabla dinámica |Ingrese el nombre de la tabla dinámica|Name: |
 
 ### Actualizar
-  
+
 Actualiza una tabla dinámica
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -37,7 +37,7 @@ Actualiza una tabla dinámica
 |Nombre de la tabla dinámica |Nombre de la tabla dinámica a actualizar|Nombre: |
 
 ### Agregar campo
-  
+
 Agrega un campo a una tabla dinámica
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -49,7 +49,7 @@ Agrega un campo a una tabla dinámica
 |Nombre de campo ||Suma de Ventas|
 
 ### Remover campo
-  
+
 Remover un campo de una tabla dinámica
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -58,7 +58,7 @@ Remover un campo de una tabla dinámica
 |Campo a remover|Nombre del campo a agregar|Field: |
 
 ### Filtrar
-  
+
 Filtra una tabla dinámica
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -70,7 +70,7 @@ Filtra una tabla dinámica
 |Valor(es) del filtro a desmarcar |Nombre del valor del filtro que se quiere desmarcar|Name: |
 
 ### Filtrar Valores
-  
+
 Filtra valores de una tabla dinámica
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -83,7 +83,7 @@ Filtra valores de una tabla dinámica
 |Valor(es) del filtro a marcar ||Name: |
 
 ### Listar Campos
-  
+
 Lista todos los campos disponibles
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -92,7 +92,7 @@ Lista todos los campos disponibles
 |Asignar resultado a variable|Nombre de la variable donde se almacenará el resultado|Variable|
 
 ### Cambiar origen de datos
-  
+
 Cambia el rango de origen de los datos de una tabla dinámica
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -101,7 +101,7 @@ Cambia el rango de origen de los datos de una tabla dinámica
 |Nuevo Rango|Rango de datos de la tabla dinámica|Sheet1!A1:R200|
 
 ### Lista items de filtro
-  
+
 Devuelve una lista con los items de un filtro
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -111,7 +111,7 @@ Devuelve una lista con los items de un filtro
 |Asignar resultado a variable|Nombre de la variable donde se almacenará el resultado|Variable|
 
 ### Insertar Línea de tiempo
-  
+
 Crea una nueva línea de tiempo
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -121,7 +121,7 @@ Crea una nueva línea de tiempo
 |Rango donde posicionar|Rango donde se insertará la línea de tiempo|A1:D20|
 
 ### Filtrar Slider
-  
+
 Modifica el filtro de un slider
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -131,7 +131,7 @@ Modifica el filtro de un slider
 |Fecha final|Fecha final del filtro|13/12/2000: |
 
 ### Estado de filtro
-  
+
 Comprueba si el elemento está marcado en el filtro de campo como visible o no visible. Retornar True o Falso respectivamente.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -142,7 +142,7 @@ Comprueba si el elemento está marcado en el filtro de campo como visible o no v
 |Asignar resultado a variable||Variable|
 
 ### Cambiar tabla a formato tabular
-  
+
 Altera los campos de la tabla dinamica a formato tabular.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -151,7 +151,7 @@ Altera los campos de la tabla dinamica a formato tabular.
 |Campos de la tabla|Campos de la tabla dinamica.|['Numero', 'Fecha', 'Hora']|
 
 ### Borrar subtotales
-  
+
 Elimina los subtotales de la tabla dinamica.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -160,7 +160,7 @@ Elimina los subtotales de la tabla dinamica.
 |Campos de la tabla|Campos de la tabla dinamica.|['Numero', 'Fecha', 'Hora']|
 
 ### Repetir etiquetas de elementos
-  
+
 Permite a la tabla dinamica repetir etiquetas.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -169,7 +169,7 @@ Permite a la tabla dinamica repetir etiquetas.
 |Campos de la tabla|Campos de la tabla dinamica que se repetiran.|['Numero', 'Fecha', 'Hora']|
 
 ### Expandir registros
-  
+
 Expande todos los elementos del campo que esté contraído
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -177,3 +177,11 @@ Expande todos los elementos del campo que esté contraído
 |Nombre de la tabla dinámica |Nombre asignado a la tabla dinámica|MiTabla|
 |Campo |Nombre del campo donde se ubica el registro a expandir (Campo Activo)|Mes|
 |Item a expandir|Nombre del item a expandir tal cual figura en Listar items|Enero|
+
+### Listar tablas dinamicas de hoja
+
+Se retorna una lista con todas las tablas dinamicas de la hoja
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Hoja |Nombre de la hoja cuyas tablas dinámicas se quieren listar|Hoja 1|
+|Asignar resultado a variable|Nombre de la variable donde se almacenará el resultado|Variable|

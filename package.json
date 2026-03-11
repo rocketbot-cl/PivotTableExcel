@@ -1764,7 +1764,7 @@
       },
       "es": {
         "title": "Listar tablas dinamicas de hoja",
-        "description": "Se retorana una lista con todas las tablas dinamicas de la hoja",
+        "description": "Se retorna una lista con todas las tablas dinamicas de la hoja",
         "title_options": null,
         "options": null
       },

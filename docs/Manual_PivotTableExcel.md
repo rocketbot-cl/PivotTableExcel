@@ -3,21 +3,23 @@
 
 
 # Pivot tables
-  
-Module to work and interact with Pivot Tables from Microsoft Excel.  
+
+Module to work and interact with Pivot Tables from Microsoft Excel.
+
+*Read this in other languages: [English](Manual_PivotTableExcel.md), [Português](Manual_PivotTableExcel.pr.md), [Español](Manual_PivotTableExcel.es.md)*
 
 ![banner](imgs/Banner_PivotTableExcel.png)
 ## How to install this module
-  
+
 To install the module in Rocketbot Studio, it can be done in two ways:
 1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
-2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.
 
 
 ## Description of the commands
 
 ### Create
-  
+
 Create a new pivot table
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -26,7 +28,7 @@ Create a new pivot table
 |Pivot table name |Enter the pivot table name|Name: |
 
 ### Refresh
-  
+
 Refresh a pivot table
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -35,7 +37,7 @@ Refresh a pivot table
 |Pivote table name |Name of the pivot table to update|Name: |
 
 ### Add field
-  
+
 Add field to a pivot table
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -47,7 +49,7 @@ Add field to a pivot table
 |Field name ||Sales Sum|
 
 ### Remove field
-  
+
 Remove a field from a pivot table
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -56,7 +58,7 @@ Remove a field from a pivot table
 |Field to remove |Name of the field to add|Field: |
 
 ### Filter
-  
+
 Filter a pivot table
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -68,7 +70,7 @@ Filter a pivot table
 |Filter(s) name to uncheck |Name of the filter value to be unchecked|Name: |
 
 ### Filter Values
-  
+
 Filter a pivot table values
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -81,7 +83,7 @@ Filter a pivot table values
 |Filter(s) name to check ||Name: |
 
 ### List Fields
-  
+
 List all available table fields
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -90,7 +92,7 @@ List all available table fields
 |Assign result to variable |Variable name where the result will be stored|Variable|
 
 ### Change pivot table data
-  
+
 Change the source data range of a pivot table
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -99,7 +101,7 @@ Change the source data range of a pivot table
 |New Range |Pivot table data range|Sheet1!A1:R200|
 
 ### List Filter Items 
-  
+
 Return all items from filter
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -109,7 +111,7 @@ Return all items from filter
 |Assign result to variable |Variable name to store the result|Variable|
 
 ### Insert timeline
-  
+
 Create a new timeline.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -119,7 +121,7 @@ Create a new timeline.
 |Position range |Range where the timeline will be inserted|A1:D20|
 
 ### Filter slider
-  
+
 Sets the timeline's filter.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -129,7 +131,7 @@ Sets the timeline's filter.
 |End date|End date of the filter|13/12/2000: |
 
 ### Filter status
-  
+
 Checks whether the element is marked in the field filter as visible or not visible. Return True or False respectively.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -140,7 +142,7 @@ Checks whether the element is marked in the field filter as visible or not visib
 |Assign result to variable ||Variable|
 
 ### Change table format to tabular
-  
+
 Changes the field of the pivot table to tabular format.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -149,7 +151,7 @@ Changes the field of the pivot table to tabular format.
 |Pivot fields|Pivot table fields.|['Number', 'Date', 'Hours']: |
 
 ### Delete subtotals
-  
+
 Erase the subtotals from the pivot table.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -158,7 +160,7 @@ Erase the subtotals from the pivot table.
 |Pivot fields|Pivot table fields.|['Number', 'Date', 'Hours']: |
 
 ### Repeat label
-  
+
 Allows to the pivot table to repeat labels.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -167,7 +169,7 @@ Allows to the pivot table to repeat labels.
 |Pivot fields|Pivot table fields that will be repeated.|['Number', 'Date', 'Hours']: |
 
 ### Expand items
-  
+
 Expand all items in the field that is collapsed
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -175,3 +177,11 @@ Expand all items in the field that is collapsed
 |Pivot table name |Pivot table name|MyTable|
 |Field |Name of the field where the record to expand is located (Active Field)|Month|
 |Item to expand|Name of the item to expand as it appears in the List items command|January|
+
+### List pivot tables in sheet
+
+Returns a list with all pivot tables in the sheet
+|Parameters|Description|example|
+| --- | --- | --- |
+|Sheet |Sheet name where the pivot tables are located|Sheet1|
+|Assign result to variable |Variable name where the result will be stored|Variable|
