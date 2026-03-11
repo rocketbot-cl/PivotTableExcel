@@ -25,6 +25,8 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 """
 # Changing the data types of all strings in the module at once
 from __future__ import unicode_literals
+import ast
+import datetime
 import os
 import sys
 import traceback
@@ -60,6 +62,46 @@ def number_to_column(n):
         n, remainder = divmod(n - 1, 26)
         string2 = chr(65 + remainder) + string2
     return string2
+
+
+def _try_literal_eval(value):
+    if value is None:
+        return None
+    if not isinstance(value, str):
+        return value
+    value = value.strip()
+    if value == "":
+        return value
+    try:
+        return ast.literal_eval(value)
+    except Exception:
+        return value
+
+
+def _parse_date(value):
+    if isinstance(value, datetime.datetime):
+        return value
+    if isinstance(value, datetime.date):
+        return datetime.datetime(value.year, value.month, value.day)
+    if isinstance(value, (int, float)):
+        return value
+    if isinstance(value, str):
+        s = value.strip()
+        for fmt in (
+            "%d/%m/%Y",
+            "%d-%m-%Y",
+            "%Y-%m-%d",
+            "%Y/%m/%d",
+            "%d/%m/%Y %H:%M",
+            "%d/%m/%Y %H:%M:%S",
+            "%Y-%m-%d %H:%M",
+            "%Y-%m-%d %H:%M:%S",
+        ):
+            try:
+                return datetime.datetime.strptime(s, fmt)
+            except Exception:
+                pass
+    return value
 
 constants = {"xlRowField": 1, "xlColumnField": 2, "xlPageField": 3}
 functions = {"xlSum": -4157, "xlCount": -4112, "xlAverage": -4106, "xlProduct": -4149, "xlMax": -4136, "xlMin": -4139}
@@ -258,26 +300,65 @@ try:
         filter_ = pivotTable.PivotFields(data)
 
         if not filter_type and clean is not None:
-            clean = eval(clean)
+            clean = _try_literal_eval(clean)
             if clean:
                 filter_.ClearAllFilters()
         else:
             if clean is not None:
-                clean = eval(clean)
+                clean = _try_literal_eval(clean)
             if clean:
                 filter_.ClearAllFilters()
-            
-            filter_value = eval(check)
-            filter_type = eval(filter_type)
-            
-            data_field = wb.api.ActiveSheet.PivotTables(pivotTableName).PivotFields(field)
-            
-            if filter_type in [13, 14] and isinstance(filter_value, list) and len(filter_value) == 2:
-                value1 = filter_value[0]
-                value2 = filter_value[1]
-                filter_.PivotFilters.Add2(filter_type, data_field, value1, value2)
+
+            filter_value = _try_literal_eval(check)
+            filter_type = _try_literal_eval(filter_type)
+            try:
+                filter_type = int(filter_type)
+            except Exception:
+                raise Exception("Invalid filter_type. It must be an integer value from XlPivotFilterType")
+
+            value_filter_types = {7, 8, 9, 10, 11, 12, 13, 14}
+            between_filter_types = {13, 14, 27, 28, 35, 36}
+
+            if filter_type in value_filter_types:
+                if not field:
+                    raise Exception("'field' is required for value filters (xlValue...). Leave 'field' empty only for date/label filters")
+
+                data_field = wb.api.ActiveSheet.PivotTables(pivotTableName).PivotFields(field)
+
+                if filter_type in {13, 14}:
+                    if isinstance(filter_value, str):
+                        parts = [p.strip() for p in filter_value.split(",") if p.strip()]
+                        if len(parts) == 2:
+                            filter_value = parts
+
+                    if isinstance(filter_value, list) and len(filter_value) == 2:
+                        value1 = filter_value[0]
+                        value2 = filter_value[1]
+                        filter_.PivotFilters.Add2(filter_type, data_field, value1, value2)
+                    else:
+                        raise Exception("For xlValueIsBetween/xlValueIsNotBetween provide two values: [value1, value2]")
+                else:
+                    filter_.PivotFilters.Add2(filter_type, data_field, filter_value)
             else:
-                filter_.PivotFilters.Add2(filter_type, data_field, filter_value)
+                # Label/date filter (e.g., xlBefore/xlAfter/xlDateBetween). Do NOT use DataField.
+                if filter_value in (None, ""):
+                    filter_.PivotFilters.Add2(filter_type)
+                else:
+                    if filter_type in between_filter_types:
+                        if isinstance(filter_value, str):
+                            parts = [p.strip() for p in filter_value.split(",") if p.strip()]
+                            if len(parts) == 2:
+                                filter_value = parts
+
+                        if isinstance(filter_value, list) and len(filter_value) == 2:
+                            value1 = _parse_date(filter_value[0])
+                            value2 = _parse_date(filter_value[1])
+                            filter_.PivotFilters.Add2(filter_type, None, value1, value2)
+                        else:
+                            raise Exception("For date/caption between filters provide two dates: [date1, date2] or 'date1,date2'")
+                    else:
+                        value1 = _parse_date(filter_value)
+                        filter_.PivotFilters.Add2(filter_type, None, value1)
             
             # ActiveSheet.PivotTables("TablaDinámica1").PivotFields("Nombre").PivotFilters. _
             # Add2 Type:=xlValueIsGreaterThan, DataField:=ActiveSheet.PivotTables( _
@@ -540,6 +621,24 @@ End Sub"""
             print("\x1B[" + "31;40mError\x1B[" + "0m")
             PrintException()
             raise e
+    
+    if module == "listPivots":
+        sheet = GetParams("sheet")
+        res = GetParams("result")
+
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+        sh = wb.sheets[sheet]
+
+
+        pivots = sh.api.PivotTables()
+        pivot_names = []
+        for i in range(1, pivots.Count + 1):
+            pivot_name = pivots.Item(i).Name
+            pivot_names.append(pivot_name)
+
+
+        SetVar(res, pivot_names)
         
 except Exception as e:
     traceback.print_exc()
