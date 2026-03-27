@@ -12,7 +12,7 @@
   "homepage": "http://rocketbot.com/",
   "linux": false,
   "windows": true,
-  "mac": true,
+  "mac": false,
   "docker": false,
   "dependencies": {
     "xlwings": "0.16.0"
@@ -104,7 +104,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -186,7 +186,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -367,7 +367,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -445,7 +445,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -586,7 +586,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -787,7 +787,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -874,7 +874,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -956,7 +956,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -1060,7 +1060,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -1177,7 +1177,7 @@
       "group": "scripts",
       "linux": false,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -1276,7 +1276,7 @@
       "group": "scripts",
       "linux": false,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -1399,7 +1399,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -1481,7 +1481,7 @@
         "group": "scripts",
         "linux": false,
         "windows": true,
-        "mac": true,
+        "mac": false,
         "docker": true
     },
     {
@@ -1563,7 +1563,7 @@
         "group": "scripts",
         "linux": false,
         "windows": true,
-        "mac": true,
+        "mac": false,
         "docker": true
     },
     {
@@ -1645,7 +1645,7 @@
         "group": "scripts",
         "linux": false,
         "windows": true,
-        "mac": true,
+        "mac": false,
         "docker": true
     },
     {
@@ -1752,7 +1752,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     },
     {
@@ -1822,7 +1822,7 @@
       "group": "scripts",
       "linux": true,
       "windows": true,
-      "mac": true,
+      "mac": false,
       "docker": true
     }
   ]
