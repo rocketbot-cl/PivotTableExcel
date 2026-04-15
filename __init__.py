@@ -207,6 +207,51 @@ try:
                 
                 # field = pivot_table.PivotFields("Suma de {value}".format(value=d))
                 # field.Function = -4157
+
+    if module == "addCalculatedField":
+
+        sheet = GetParams("sheet")
+        pivotTableName = GetParams("table")
+        calculated_name = GetParams("name")
+        formula = GetParams("formula")
+        add_to_values = GetParams("add_to_values")
+        value_field_name = GetParams("data_field_name")
+        func = GetParams("data_field_func")
+
+        if not calculated_name:
+            raise Exception("'name' is required")
+        if not formula:
+            raise Exception("'formula' is required")
+
+        formula = formula.strip()
+        if not formula.startswith("="):
+            formula = "=" + formula
+
+        xls = excel.file_[excel.actual_id]
+        wb = xls['workbook']
+        wb.sheets[sheet].select()
+
+        pivot_table = wb.api.ActiveSheet.PivotTables(pivotTableName)
+
+        # Replace field if it already exists to allow updates with same name.
+        try:
+            pivot_table.CalculatedFields(calculated_name).Delete()
+        except Exception:
+            pass
+
+        pivot_table.CalculatedFields().Add(calculated_name, formula, True)
+
+        add_to_values = _try_literal_eval(add_to_values)
+        if add_to_values in (None, ""):
+            add_to_values = True
+
+        if add_to_values:
+            field = pivot_table.PivotFields(calculated_name)
+            value_name = value_field_name if value_field_name else calculated_name
+            if func and func in functions:
+                pivot_table.AddDataField(field, value_name, functions[func])
+            else:
+                pivot_table.AddDataField(field, value_name)
     
     if module == "removeField":
         sheet = GetParams("sheet")
