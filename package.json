@@ -7,7 +7,7 @@
     "pr": "Modulo para trabalhar e interagir com tabelas dinâmicas do Microsoft Excel."
   },
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "2.7.13",
+  "version": "2.7.14",
   "license": "MIT",
   "homepage": "http://rocketbot.com/",
   "linux": false,
@@ -172,6 +172,23 @@
               "en": "Name of the pivot table to update"
             },
             "id": "table",
+            "css": "col-md-6"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "False",
+              "en": "False"
+            },
+            "title": {
+              "es": "Evitar actualización de datos externos: ",
+              "en": "Skip external data update: "
+            },
+            "help": {
+              "es": "Marcar si el refresh se queda cargando. Evita actualizar conexiones o datos externos durante el refresco.",
+              "en": "Check this if refresh keeps loading. It skips external connections or data updates during refresh."
+            },
+            "id": "skip_external_data",
             "css": "col-md-6"
           }
         ]

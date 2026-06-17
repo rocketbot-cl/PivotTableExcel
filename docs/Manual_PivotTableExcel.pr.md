@@ -3,23 +3,23 @@
 
 
 # Tabelas dinâmicas
-
-Modulo para trabalhar e interagir com tabelas dinâmicas do Microsoft Excel.
+  
+Modulo para trabalhar e interagir com tabelas dinâmicas do Microsoft Excel.  
 
 *Read this in other languages: [English](Manual_PivotTableExcel.md), [Português](Manual_PivotTableExcel.pr.md), [Español](Manual_PivotTableExcel.es.md)*
-
+  
 ![banner](imgs/Banner_PivotTableExcel.png)
 ## Como instalar este módulo
-
+  
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1. Manual: __Baixe__ o arquivo .zip e descompacte-o na pasta módulos. O nome da pasta deve ser o mesmo do módulo e dentro dela devem ter os seguintes arquivos e pastas: \__init__.py, package.json, docs, example e libs. Se você tiver o aplicativo aberto, atualize seu navegador para poder usar o novo módulo.
-2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.
+2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.  
 
 
 ## Descrição do comando
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -28,16 +28,17 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 |Pivot table name |Enter the pivot table name|Name: |
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Sheet |Name of the sheet where the pivot table is located|Sheet1|
 |Refresh all ||False|
 |Pivote table name |Name of the pivot table to update|Name: |
+|Skip external data update ||False|
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -49,7 +50,20 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 |Field name ||Sales Sum|
 
 ### 
+  
 
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Sheet |Name of the sheet where the pivot table is located|Sheet1|
+|Pivot table name |Pivot table name|Name: |
+|Calculated field name|Name of the new calculated field|Total sold|
+|Formula||=Liters*Price|
+|Add to values|||
+|Aggregation function|||
+|Values display name||Total sold|
+
+### 
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -58,7 +72,7 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 |Field to remove |Name of the field to add|Field: |
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -70,7 +84,7 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 |Filter(s) name to uncheck |Name of the filter value to be unchecked|Name: |
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -83,7 +97,7 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 |Filter(s) name to check ||Name: |
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -92,7 +106,7 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 |Assign result to variable |Variable name where the result will be stored|Variable|
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -101,7 +115,7 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 |New Range |Pivot table data range|Sheet1!A1:R200|
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -111,7 +125,7 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 |Assign result to variable |Variable name to store the result|Variable|
 
 ### Inserir linha do tempo
-
+  
 Este comando cria uma nova linha do tempo
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -121,7 +135,7 @@ Este comando cria uma nova linha do tempo
 |Interválo onde posicionar|Interválo onde a linha do tempo será inserida|A1:D20|
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -131,7 +145,7 @@ Este comando cria uma nova linha do tempo
 |End date|End date of the filter|13/12/2000: |
 
 ### Status do filtro
-
+  
 Retorna True se o filtro estiver marcado
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -142,16 +156,7 @@ Retorna True se o filtro estiver marcado
 |Assign result to variable ||Variable|
 
 ### 
-
-
-|Parâmetros|Descrição|exemplo|
-| --- | --- | --- |
-|Sheet |Name of the sheet where the pivot table is located.|Sheet1|
-|Table name |Name of the pivot table.|Name: |
-|Pivot fields|Pivot table fields.|['Number', 'Date', 'Hours']: |
-
-### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -160,7 +165,16 @@ Retorna True se o filtro estiver marcado
 |Pivot fields|Pivot table fields.|['Number', 'Date', 'Hours']: |
 
 ### 
+  
 
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Sheet |Name of the sheet where the pivot table is located.|Sheet1|
+|Table name |Name of the pivot table.|Name: |
+|Pivot fields|Pivot table fields.|['Number', 'Date', 'Hours']: |
+
+### 
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -169,7 +183,7 @@ Retorna True se o filtro estiver marcado
 |Pivot fields|Pivot table fields that will be repeated.|['Number', 'Date', 'Hours']: |
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -179,7 +193,7 @@ Retorna True se o filtro estiver marcado
 |Item to expand|Name of the item to expand as it appears in the List items command|January|
 
 ### 
-
+  
 
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |

@@ -158,19 +158,84 @@ try:
         sheet = GetParams("sheet")
         pivotTableName = GetParams("table")
         refresh_all = GetParams("all")
+        skip_external_data = GetParams("skip_external_data")
         
         xls = excel.file_[excel.actual_id]
         wb = xls['workbook']
-        ws = wb.sheets[sheet]
+        refresh_all = _try_literal_eval(refresh_all)
+        skip_external_data = _try_literal_eval(skip_external_data)
+
+        available_sheets = []
+        for worksheet in wb.sheets:
+            available_sheets.append(worksheet.name)
+        requested_sheet = sheet.strip() if isinstance(sheet, str) else sheet
+        matched_sheets = []
+        for name in available_sheets:
+            if name == sheet:
+                matched_sheets.append(name)
+        if not matched_sheets and isinstance(requested_sheet, str):
+            for name in available_sheets:
+                if name.strip() == requested_sheet:
+                    matched_sheets.append(name)
+
+        if len(matched_sheets) != 1:
+            raise Exception("Sheet '{sheet}' not found. Available sheets: {available}".format(
+                sheet=sheet,
+                available=", ".join(available_sheets)
+            ))
+
+        ws = wb.sheets[matched_sheets[0]]
         if pivotTableName:
-            for table in ws.api.PivotTables():
-                if table._inner() == pivotTableName:
-                    table.RefreshTable()
-                    break
+            available_pivots = []
+            for pivot_table in ws.api.PivotTables():
+                available_pivots.append(pivot_table.Name)
+            requested_pivot = pivotTableName.strip() if isinstance(pivotTableName, str) else pivotTableName
+            matched_pivots = []
+            for name in available_pivots:
+                if name == pivotTableName:
+                    matched_pivots.append(name)
+            if not matched_pivots and isinstance(requested_pivot, str):
+                for name in available_pivots:
+                    if name.strip() == requested_pivot:
+                        matched_pivots.append(name)
+
+            if len(matched_pivots) != 1:
+                raise Exception("Pivot table '{table}' not found in sheet '{sheet}'. Available pivot tables: {available}".format(
+                    table=pivotTableName,
+                    sheet=matched_sheets[0],
+                    available=", ".join(available_pivots) if available_pivots else "none"
+                ))
+
+            pivot = ws.api.PivotTables(matched_pivots[0])
+            try:
+                if skip_external_data in (True, "True", "true", 1, "1"):
+                    pivot.ManualUpdate = True
+                    pivot.RefreshTable()
+                    pivot.ManualUpdate = False
+                else:
+                    pivot.RefreshTable()
+            except Exception as e:
+                error_msg = str(e)
+                if "Ocurri" in error_msg or "exception" in error_msg.lower():
+                    raise Exception("Error refreshing pivot table '{table}': {error}. If it keeps hanging, try with skip_external_data=True to avoid external data updates.".format(
+                        table=matched_pivots[0],
+                        error=error_msg
+                    ))
+                raise
         
-        if refresh_all and eval(refresh_all)==True:
-            for table in ws.api.PivotTables():
-                table.RefreshTable()
+        if refresh_all is True:
+            try:
+                for table in ws.api.PivotTables():
+                    if skip_external_data in (True, "True", "true", 1, "1"):
+                        table.ManualUpdate = True
+                        table.RefreshTable()
+                        table.ManualUpdate = False
+                    else:
+                        table.RefreshTable()
+            except Exception as e:
+                raise Exception("Error refreshing all pivot tables: {error}. If they keep hanging, try with skip_external_data=True.".format(
+                    error=str(e)
+                ))
 
     if module == "addField":
 
